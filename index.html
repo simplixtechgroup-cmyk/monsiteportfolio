@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simplix Tech Group | Votre Site Web Professionnel Clé en Main (25.900 FCFA)</title>
     <meta name="description" content="Créez votre propre site web professionnel d'autorité à 25.900 FCFA au lieu de 50.000 FCFA. Hébergement 0 FCFA/an à vie. Demandez votre maquette gratuitement.">
-    
+    <meta name="theme-color" content="#0B132B">
+
+    <!-- ================= 1. FAVICON SVG HAUTE DÉFINITION (DIRECTEMENT INTÉGRÉ) ================= -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230B132B'/><text x='50%' y='68%' font-family='Arial, sans-serif' font-weight='900' font-size='60' fill='%23F59E0B' text-anchor='middle'>S</text><circle cx='78' cy='22' r='8' fill='%2310B981'/></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%230B132B'/><text x='50%' y='68%' font-family='Arial, sans-serif' font-weight='900' font-size='60' fill='%23F59E0B' text-anchor='middle'>S</text></svg>">
+
+    <!-- ================= 2. BALISES DE PARTAGE SOCIAL (WHATSAPP, LINKEDIN, FACEBOOK) ================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Simplix Tech Group">
+    <meta property="og:title" content="Simplix Tech | Votre Propre Site Web Pro (25.900 F • 0F/an)">
+    <meta property="og:description" content="Arrêtez d'envoyer un simple CV PDF que personne ne lit. Affichez votre profil officiel trouvable sur Google. Hébergement 0F/an à vie. Testez votre maquette gratuitement !">
+    <!-- Image d'aperçu haute conversion (Format idéal 1200x630) -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Site web professionnel pour consultants et experts">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simplix Tech | Votre Propre Site Web Pro (25.900 F)">
+    <meta name="twitter:description" content="Hébergement 0 FCFA/an garanti. Demandez votre maquette gratuitement et imposez le respect en ligne.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&h=630&q=85">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -46,8 +70,11 @@
         .glow-gold { box-shadow: 0 0 35px -5px rgba(217, 119, 6, 0.35); }
         .glow-blue { box-shadow: 0 0 35px -5px rgba(29, 78, 216, 0.35); }
         .hero-overlay {
-            background: linear-gradient(135deg, rgba(11, 19, 43, 0.95) 0%, rgba(15, 23, 42, 0.90) 60%, rgba(15, 23, 42, 0.78) 100%);
+            background: linear-gradient(135deg, rgba(11, 19, 43, 0.96) 0%, rgba(15, 23, 42, 0.92) 55%, rgba(15, 23, 42, 0.82) 100%);
         }
+        .legal-scroll::-webkit-scrollbar { width: 6px; }
+        .legal-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
+        .legal-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     </style>
 </head>
 <body class="bg-brand-light text-slate-800 font-sans antialiased selection:bg-brand-gold selection:text-white pb-20 sm:pb-0">
@@ -83,8 +110,9 @@
 
         <div class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
             <a href="#contraste" class="hover:text-brand-blue transition">Pourquoi un site ?</a>
-            <a href="#demo" class="hover:text-brand-blue transition">Exemple en direct</a>
             <a href="#pack" class="hover:text-brand-blue transition">Ce qui est inclus</a>
+            <a href="#demo" class="hover:text-brand-blue transition">Exemple réel</a>
+            <a href="#contrat" class="hover:text-brand-blue transition">Processus & Contrat</a>
             <a href="#faq" class="hover:text-brand-blue transition">Questions fréquentes</a>
         </div>
 
@@ -95,66 +123,61 @@
         </div>
     </nav>
 
-    <!-- ================= 4. HERO SECTION ULTRA-MARKETING (MÉTHODE AIDA) ================= -->
-    <header class="relative min-h-[90vh] flex items-center overflow-hidden bg-brand-navy text-white">
+    <!-- ================= 4. HERO SECTION ULTRA-MARKETING (CONVERSION DIRECTE STRICTE) ================= -->
+    <header class="relative min-h-[88vh] flex items-center overflow-hidden bg-brand-navy text-white">
         
-        <!-- Image de fond Ultra-Pro avec Overlay Premium -->
+        <!-- Image de fond Ultra-Pro avec Overlay Sombre -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=85" 
-                 alt="Professionnel consultant indépendant devant son écran" 
-                 class="w-full h-full object-cover object-top opacity-35">
+                 alt="Consultant indépendant professionnel" 
+                 class="w-full h-full object-cover object-top opacity-30">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Colonne Gauche : Copywriting AIDA -->
+                <!-- Colonne Gauche : Copywriting AIDA sans fuite de trafic -->
                 <div class="lg:col-span-7 text-center lg:text-left">
                     
-                    <!-- ATTENTION : Badge de Réassurance Locale -->
+                    <!-- Badge d'Ancrage -->
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-amber-300 text-xs font-bold mb-6">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                         <span>Simplix Tech • Équipe basée à Abomey-Calavi (IITA)</span>
                     </div>
 
-                    <!-- ATTENTION / INTÉRÊT : Titre Choc -->
+                    <!-- Titre Choc Google Search -->
                     <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-5">
                         Si un client ou partenaire tape votre nom sur <span class="text-amber-400 underline decoration-amber-400/50 decoration-wavy decoration-2">Google</span> aujourd'hui... qu'est-ce qu'il trouve ?
                     </h1>
 
-                    <!-- DÉSIR : Le constat qui fait agir -->
+                    <!-- Explication du Risque -->
                     <p class="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-8 font-normal max-w-2xl mx-auto lg:mx-0">
-                        À l'ère des vendeurs de rêve, les bailleurs et recruteurs sérieux ne se fient plus aux simples CV en papier ou fichiers PDF. <strong>Ils cherchent votre historique sur Internet.</strong> Si vous êtes invisible, vous êtes disqualifié d'office. Ne perdez plus vos contrats face à moins qualifié que vous.
+                        À l'ère des vendeurs de rêve, les bailleurs et recruteurs sérieux ne se contentent plus d'un simple CV papier ou PDF. <strong>Ils vérifient votre légitimité sur Internet.</strong> Si vous êtes invisible, vous êtes disqualifié d'office. Ne laissez plus vos compétences être remises en cause.
                     </p>
 
-                    <!-- ACTION : Les Boutons d'Appel à l'Action Multipliés -->
-                    <div class="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start mb-8">
-                        <button onclick="openLeadModal('Hero CTA Principal')" class="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-sm sm:text-base tracking-wide transition shadow-xl glow-gold flex items-center justify-center gap-2 active:scale-95">
+                    <!-- Un Seul CTA Focalisé : Zéro dispersion -->
+                    <div class="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start mb-6">
+                        <button onclick="openLeadModal('Hero CTA Principal')" class="px-9 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-sm sm:text-base tracking-wide transition shadow-xl glow-gold flex items-center justify-center gap-2.5 active:scale-95">
                             <span>Demander ma maquette gratuitement</span>
                             <i class="fas fa-arrow-right text-xs"></i>
                         </button>
-                        
-                        <a href="#demo" class="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-sm sm:text-base transition flex items-center justify-center gap-2">
-                            <i class="fas fa-eye text-amber-400 text-xs"></i>
-                            <span>Voir un exemple réel en direct</span>
-                        </a>
                     </div>
 
-                    <!-- Micro-garanties sous le bouton -->
+                    <!-- Micro-garanties immédiates -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-300">
                         <span class="flex items-center gap-1.5"><i class="fas fa-shield-alt text-emerald-400"></i> Aucun engagement financier initial</span>
-                        <span class="flex items-center gap-1.5"><i class="fas fa-clock text-amber-400"></i> Maquette reçue sur WhatsApp</span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-clock text-amber-400"></i> Aperçu reçu sous 24 à 48h</span>
                     </div>
 
                 </div>
 
-                <!-- Colonne Droite : Carte Choc Prix & Rassurance -->
+                <!-- Colonne Droite : Carte Offre & Clarté Tarifaire -->
                 <div class="lg:col-span-5">
                     <div class="bg-white/95 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border-2 border-amber-400/80 shadow-2xl text-slate-900 relative">
                         
                         <div class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] font-black uppercase tracking-wider mb-3">
-                            Offre Limitée • Pack Clé en Main
+                            Tarif Spécial Lancement
                         </div>
 
                         <div class="flex items-baseline gap-3 mb-2">
@@ -170,27 +193,27 @@
                         <div class="space-y-3.5 border-t border-slate-100 pt-5 mb-6 text-xs text-slate-700">
                             <div class="flex items-center gap-2.5">
                                 <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs flex-shrink-0 font-bold">✓</div>
-                                <span><strong>0 FCFA/an d'hébergement</strong> : aucun abonnement annuel surprise.</span>
+                                <span><strong>0 FCFA/an d'hébergement</strong> : aucun renouvellement annuel.</span>
                             </div>
                             <div class="flex items-center gap-2.5">
                                 <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs flex-shrink-0 font-bold">✓</div>
-                                <span><strong>Indexé sur Google</strong> : votre nom ressort sur les moteurs de recherche.</span>
+                                <span><strong>Trouvable sur Google</strong> : votre profil est référencé officiellement.</span>
                             </div>
                             <div class="flex items-center gap-2.5">
                                 <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs flex-shrink-0 font-bold">✓</div>
-                                <span><strong>Mises à jour à 1.000 FCFA</strong> : pour chaque nouvelle activité ou article pro.</span>
+                                <span><strong>Ajouts à 1.000 FCFA</strong> : pour toute nouvelle activité ou article pro.</span>
                             </div>
                         </div>
 
                         <button onclick="openLeadModal('Carte Prix Hero')" class="w-full py-4 rounded-xl bg-brand-blue hover:bg-blue-900 text-white font-extrabold text-sm tracking-wide transition shadow-lg shadow-blue-900/25 flex items-center justify-center gap-2 active:scale-95">
-                            <span>Lancer ma maquette gratuite</span>
+                            <span>Lancer ma maquette sans engagement</span>
                             <i class="fas fa-chevron-right text-xs"></i>
                         </button>
 
                         <div class="text-center mt-3">
-                            <a href="#contrat" class="text-[11px] text-slate-500 hover:text-brand-blue underline">
+                            <button onclick="openContractModal()" class="text-[11px] text-slate-500 hover:text-brand-blue underline">
                                 Voir notre contrat type de prestation
-                            </a>
+                            </button>
                         </div>
 
                     </div>
@@ -266,7 +289,7 @@
                         <ul class="space-y-4 text-xs sm:text-sm text-slate-700">
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-check text-emerald-600 font-bold mt-0.5"></i>
-                                <span><strong>Un lien léger qui s'ouvre en 1 seconde :</strong> fonctionne immédiatement sur n'importe quel smartphone, sans encombrer la mémoire du client.</span>
+                                <span><strong>Un lien léger qui s'ouvre en 1 seconde :</strong> fonctionne immédiatement sur n'importe quel smartphone, sans saturer la mémoire du client.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-check text-emerald-600 font-bold mt-0.5"></i>
@@ -296,7 +319,101 @@
         </div>
     </section>
 
-    <!-- ================= 6. LA DÉMO EN DIRECT (LE CAS RÉEL CONCRET) ================= -->
+    <!-- ================= 6. CE QUI EST INCLUS DANS LE PACK (LES 6 PILIERS) ================= -->
+    <section id="pack" class="py-16 sm:py-24 bg-brand-light border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block mb-2">Transparence totale</span>
+                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-brand-navy mb-4">
+                    Tout ce qui est inclus dans vos 25.900 FCFA
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Pas de frais cachés. Vous savez exactement ce que vous recevez pour valoriser votre carrière.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Pilier 1 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-blue transition shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base mb-4 font-bold">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-2">Site Web Responsive</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Design moderne et ultra-rapide, optimisé pour s'afficher impeccablement sur smartphone (iPhone, Android) et sur écran d'ordinateur.
+                    </p>
+                </div>
+
+                <!-- Pilier 2 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400 transition shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-base mb-4 font-bold">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-2">0 FCFA/an d'hébergement</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Pas de facture de 40.000 F ou 60.000 F qui tombe chaque année sous peine de voir votre site coupé. Vous payez une seule fois, votre site reste en ligne à vie.
+                    </p>
+                </div>
+
+                <!-- Pilier 3 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-blue transition shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base mb-4 font-bold">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-2">Adresse Web Pro Incluse</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Une adresse internet propre vous est attribuée gratuitement pour partager votre profil. <em>(Option : si vous voulez votre propre nom en .com, c'est possible à prix coûtant).</em>
+                    </p>
+                </div>
+
+                <!-- Pilier 4 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-emerald-400 transition shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-base mb-4 font-bold">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-2">Bouton WhatsApp & CV PDF</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Les recruteurs peuvent vous contacter directement en 1 clic sur WhatsApp ou télécharger votre CV officiel à jour depuis votre page.
+                    </p>
+                </div>
+
+                <!-- Pilier 5 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-blue transition shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base mb-4 font-bold">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-2">Indexation sur Google</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Déclaration technique auprès de Google pour que votre nom et vos compétences apparaissent officiellement lorsqu'un bailleur vous recherche en ligne.
+                    </p>
+                </div>
+
+                <!-- Pilier 6 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400 transition shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-base mb-4 font-bold">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-brand-navy mb-2">Ajouts à 1.000 FCFA seulement</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Vous lancez une nouvelle activité ? Vous souhaitez publier un article professionnel sur un projet ? Nous l'ajoutons à votre site pour seulement 1.000 F par ajout.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CTA Milieu de page -->
+            <div class="text-center mt-12">
+                <button onclick="openLeadModal('CTA Grille Piliers')" class="px-8 py-4 rounded-xl bg-brand-blue hover:bg-blue-900 text-white font-extrabold text-sm sm:text-base tracking-wide transition shadow-xl shadow-blue-900/20 active:scale-95">
+                    Demander ma maquette gratuite pour mon site (25.900 F) →
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 7. LE FILET DE SÉCURITÉ : DÉMO RÉELLE UNIQUE (POUR LE CLIENT HÉSITANT) ================= -->
     <section id="demo" class="py-16 sm:py-20 bg-slate-100 border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
@@ -304,15 +421,15 @@
                 <i class="fas fa-laptop-code"></i>
             </div>
 
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold block mb-2">Preuve tangible</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold block mb-2">Preuve tangible & concrète</span>
             <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-navy mb-4">
-                Ne nous croyez pas sur parole : testez un site réel en direct
+                Vous hésitez encore ? Testez un site réel déjà en ligne.
             </h2>
             <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
-                Voici un exemple complet conçu par notre équipe pour <strong>M. Koffi Olivier Hounkpè</strong>. Observez la clarté du profil, la fluidité sur mobile et la mise en valeur des compétences :
+                C'est à cet endroit précis que vous pouvez juger de la qualité de notre travail avant de demander votre propre maquette. Découvrez le site réalisé pour <strong>M. Koffi Olivier Hounkpè</strong> :
             </p>
 
-            <!-- Encadré Démo Cliquable -->
+            <!-- L'UNIQUE EMPLACEMENT STRATÉGIQUE DU LIEN DÉMO -->
             <div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-slate-200 shadow-xl max-w-2xl mx-auto text-left relative overflow-hidden">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
                     <div class="flex items-center gap-2">
@@ -337,7 +454,7 @@
                         <i class="fas fa-external-link-alt text-xs"></i>
                     </a>
                     <button onclick="openLeadModal('Bouton Apres Demo')" class="py-3.5 px-6 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs sm:text-sm text-center transition flex items-center justify-center gap-2 shadow">
-                        <span>Voulez-vous le même résultat ? Cliquez ici</span>
+                        <span>Créer le même type de site pour moi</span>
                     </button>
                 </div>
             </div>
@@ -345,118 +462,24 @@
         </div>
     </section>
 
-    <!-- ================= 7. CE QUI EST INCLUS DANS LE PACK (LES 6 PILIERS) ================= -->
-    <section id="pack" class="py-16 sm:py-24 bg-white border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block mb-2">Transparence totale</span>
-                <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-brand-navy mb-4">
-                    Tout ce qui est inclus dans vos 25.900 FCFA
-                </h2>
-                <p class="text-slate-600 text-sm sm:text-base">
-                    Pas de frais cachés. Vous savez exactement ce que vous recevez pour valoriser votre carrière.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Pilier 1 -->
-                <div class="p-6 rounded-2xl bg-brand-light border border-slate-200 hover:border-brand-blue transition">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base mb-4 font-bold">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-brand-navy mb-2">Site Web Responsive</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Design moderne et ultra-rapide, optimisé pour s'afficher impeccablement sur smartphone (iPhone, Android) et sur grand écran d'ordinateur.
-                    </p>
-                </div>
-
-                <!-- Pilier 2 -->
-                <div class="p-6 rounded-2xl bg-brand-light border border-slate-200 hover:border-amber-400 transition">
-                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-base mb-4 font-bold">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-brand-navy mb-2">0 FCFA/an d'hébergement</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Pas de facture de 40.000 F ou 60.000 F qui tombe chaque année sous peine de voir votre site coupé. Vous payez une seule fois, votre site reste en ligne à vie.
-                    </p>
-                </div>
-
-                <!-- Pilier 3 -->
-                <div class="p-6 rounded-2xl bg-brand-light border border-slate-200 hover:border-brand-blue transition">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base mb-4 font-bold">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-brand-navy mb-2">Adresse Web Pro Incluse</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Une adresse internet propre vous est attribuée gratuitement pour partager votre profil. <em>(Option : si vous voulez votre propre nom en .com, c'est possible à prix coûtant).</em>
-                    </p>
-                </div>
-
-                <!-- Pilier 4 -->
-                <div class="p-6 rounded-2xl bg-brand-light border border-slate-200 hover:border-emerald-400 transition">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-base mb-4 font-bold">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-brand-navy mb-2">Bouton WhatsApp & CV PDF</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Les recruteurs peuvent vous contacter directement en 1 clic sur WhatsApp ou télécharger votre CV officiel à jour depuis votre page.
-                    </p>
-                </div>
-
-                <!-- Pilier 5 -->
-                <div class="p-6 rounded-2xl bg-brand-light border border-slate-200 hover:border-brand-blue transition">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-base mb-4 font-bold">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-brand-navy mb-2">Indexation sur Google</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Déclaration technique auprès de Google pour que votre nom et vos compétences apparaissent officiellement lorsqu'un bailleur vous recherche en ligne.
-                    </p>
-                </div>
-
-                <!-- Pilier 6 -->
-                <div class="p-6 rounded-2xl bg-brand-light border border-slate-200 hover:border-amber-400 transition">
-                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-base mb-4 font-bold">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-brand-navy mb-2">Ajouts à 1.000 FCFA seulement</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Vous lancez une nouvelle activité ? Vous souhaitez publier un article professionnel sur un projet ? Nous l'ajoutons à votre site pour seulement 1.000 F par ajout.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- CTA Milieu de page -->
-            <div class="text-center mt-12">
-                <button onclick="openLeadModal('CTA Grille Piliers')" class="px-8 py-4 rounded-xl bg-brand-blue hover:bg-blue-900 text-white font-extrabold text-sm sm:text-base tracking-wide transition shadow-xl shadow-blue-900/20 active:scale-95">
-                    Demander ma maquette gratuite pour mon site (25.900 F) →
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================= 8. PROCESSUS EN 3 ÉTAPES & LE CONTRAT TYPE ================= -->
-    <section id="contrat" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <!-- ================= 8. PROCESSUS EN 3 ÉTAPES & LE CONTRAT CADRE INSTITUTIONNEL ================= -->
+    <section id="contrat" class="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-2">La Sérénité Absolue</span>
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-2">Sécurité Contractuelle</span>
                 <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-brand-navy mb-3">
                     Comment se déroule votre commande ?
                 </h2>
                 <p class="text-slate-600 text-xs sm:text-sm">
-                    Vous ne prenez aucun risque financier. Tout est cadré, sécurisé et transparent.
+                    Vous ne prenez aucun risque financier. Tout est encadré juridiquement dès le départ.
                 </p>
             </div>
 
             <!-- Les 3 Étapes -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
                 
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+                <div class="bg-brand-light p-6 rounded-2xl border border-slate-200 relative shadow-sm">
                     <span class="w-8 h-8 rounded-full bg-slate-900 text-white font-black text-xs flex items-center justify-center mb-4">1</span>
                     <h4 class="font-bold text-brand-navy text-sm mb-2">Demande de maquette</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">
@@ -464,7 +487,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+                <div class="bg-brand-light p-6 rounded-2xl border border-slate-200 relative shadow-sm">
                     <span class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center mb-4">2</span>
                     <h4 class="font-bold text-brand-navy text-sm mb-2">Présentation sur WhatsApp</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">
@@ -472,7 +495,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
+                <div class="bg-brand-light p-6 rounded-2xl border border-slate-200 relative shadow-sm">
                     <span class="w-8 h-8 rounded-full bg-brand-blue text-white font-black text-xs flex items-center justify-center mb-4">3</span>
                     <h4 class="font-bold text-brand-navy text-sm mb-2">Validation & Lancement</h4>
                     <p class="text-xs text-slate-600 leading-relaxed">
@@ -482,21 +505,21 @@
 
             </div>
 
-            <!-- LE CONTRAT TYPE (ARME SUPRÊME ANTI-ARNAQUE) -->
+            <!-- LE BLOC DU CONTRAT TYPE INSTITUTIONNEL -->
             <div class="bg-gradient-to-br from-brand-navy to-slate-900 text-white p-6 sm:p-10 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="space-y-2 text-center md:text-left">
                     <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
-                        <i class="fas fa-file-contract"></i> Engagement Juridique Écrit
+                        <i class="fas fa-balance-scale"></i> Transparence Juridique & Conformité
                     </div>
-                    <h3 class="text-lg sm:text-2xl font-black text-white">Consultez notre Contrat Type de Prestation</h3>
+                    <h3 class="text-lg sm:text-2xl font-black text-white">Consultez notre Contrat-Cadre de Prestation</h3>
                     <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
-                        En Afrique, beaucoup de prestataires parlent mais peu s'engagent par écrit. Chez Simplix Tech, nos garanties (0F/an, délais, propriété) sont stipulées noir sur blanc dans notre contrat.
+                        En Afrique, beaucoup de promesses ne sont jamais écrites. Chez Simplix Tech, nos garanties (0F/an, délais de livraison, propriété intégrale de vos données) sont stipulées noir sur blanc dans notre convention de service.
                     </p>
                 </div>
 
-                <button onclick="openContractModal()" class="flex-shrink-0 px-6 py-3.5 rounded-xl bg-white text-brand-navy hover:bg-slate-100 font-extrabold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg">
-                    <i class="fas fa-file-pdf text-amber-600"></i>
-                    <span>Lire le contrat type</span>
+                <button onclick="openContractModal()" class="flex-shrink-0 px-6 py-3.5 rounded-xl bg-white text-brand-navy hover:bg-slate-100 font-extrabold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg active:scale-95">
+                    <i class="fas fa-file-contract text-amber-600 text-sm"></i>
+                    <span>Ouvrir le contrat type officiel</span>
                 </button>
             </div>
 
@@ -504,7 +527,7 @@
     </section>
 
     <!-- ================= 9. FILET DE RATTRAPAGE : WHATSAPP DIRECT + FAQ ================= -->
-    <section id="faq" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <section id="faq" class="py-16 sm:py-24 bg-brand-light border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center mb-12">
@@ -513,7 +536,7 @@
                     Tout ce que vous devez savoir avant de vous lancer
                 </h2>
                 <p class="text-slate-600 text-xs sm:text-sm">
-                    Cliquez sur les questions pour afficher nos réponses en toute franchise.
+                    Cliquez sur les questions pour afficher nos réponses sans détour.
                 </p>
             </div>
 
@@ -538,7 +561,7 @@
             <div class="space-y-3.5" id="faq-container">
                 
                 <!-- Q1 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                     <button class="w-full text-left p-5 font-bold text-sm text-brand-navy flex items-center justify-between gap-4" onclick="toggleFaq(this)">
                         <span>Est-ce qu'il y a vraiment 0 FCFA à payer chaque année pour l'hébergement ?</span>
                         <i class="fas fa-plus text-xs text-slate-400 transition-transform duration-200"></i>
@@ -549,7 +572,7 @@
                 </div>
 
                 <!-- Q2 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                     <button class="w-full text-left p-5 font-bold text-sm text-brand-navy flex items-center justify-between gap-4" onclick="toggleFaq(this)">
                         <span>Comment se passe le paiement des 3 tranches de 8.650 FCFA ?</span>
                         <i class="fas fa-plus text-xs text-slate-400 transition-transform duration-200"></i>
@@ -560,7 +583,7 @@
                 </div>
 
                 <!-- Q3 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                     <button class="w-full text-left p-5 font-bold text-sm text-brand-navy flex items-center justify-between gap-4" onclick="toggleFaq(this)">
                         <span>Et si je veux mon propre nom de domaine en .com (ex: monnom.com) ?</span>
                         <i class="fas fa-plus text-xs text-slate-400 transition-transform duration-200"></i>
@@ -571,7 +594,7 @@
                 </div>
 
                 <!-- Q4 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                     <button class="w-full text-left p-5 font-bold text-sm text-brand-navy flex items-center justify-between gap-4" onclick="toggleFaq(this)">
                         <span>Comment faire si je veux ajouter une nouvelle activité ou un article pro plus tard ?</span>
                         <i class="fas fa-plus text-xs text-slate-400 transition-transform duration-200"></i>
@@ -582,7 +605,7 @@
                 </div>
 
                 <!-- Q5 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
+                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
                     <button class="w-full text-left p-5 font-bold text-sm text-brand-navy flex items-center justify-between gap-4" onclick="toggleFaq(this)">
                         <span>Où êtes-vous basés physiquement ?</span>
                         <i class="fas fa-plus text-xs text-slate-400 transition-transform duration-200"></i>
@@ -711,40 +734,132 @@
         </div>
     </div>
 
-    <!-- ================= 13. MODAL DU CONTRAT TYPE ================= -->
-    <div id="contract-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 my-8 max-h-[85vh] flex flex-col">
+    <!-- ================= 13. MODAL DU CONTRAT CADRE INSTITUTIONNEL (ENRICHI ET CONFORME) ================= -->
+    <div id="contract-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-10 shadow-2xl relative border-2 border-slate-200 my-6 max-h-[90vh] flex flex-col">
             
-            <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-4">
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-file-contract text-brand-blue text-lg"></i>
-                    <h3 class="text-base sm:text-lg font-black text-brand-navy">Contrat Type de Prestation — Simplix Tech</h3>
+            <!-- Entête Institutionnelle du Document -->
+            <div class="flex items-start justify-between border-b-2 border-slate-200 pb-5 mb-5">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-navy text-amber-400 flex items-center justify-center text-xl shadow-md font-display font-black">
+                        S
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-brand-gold block">Document Contractuel Officiel</span>
+                        <h3 class="text-base sm:text-xl font-black text-brand-navy leading-tight">CONVENTION-CADRE DE PRESTATION DE SERVICE DIGITAL</h3>
+                        <span class="text-[11px] text-slate-500">Réf : STG-WEB-2026/BENIN • Simplix Tech Group</span>
+                    </div>
                 </div>
-                <button onclick="closeContractModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition">
-                    <i class="fas fa-times text-xs"></i>
+                <button onclick="closeContractModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition flex-shrink-0">
+                    <i class="fas fa-times text-sm"></i>
                 </button>
             </div>
 
-            <div class="overflow-y-auto space-y-4 text-xs text-slate-700 leading-relaxed pr-2">
-                <p><strong>ENTRE LES SOUSSIGNÉS :</strong></p>
-                <p><strong>L'Agence Simplix Tech Group</strong>, représentée par sa direction technique sise à Abomey-Calavi (IITA), Bénin, ci-après dénommée <em>« Le Prestataire »</em>, d'une part,</p>
-                <p><strong>ET :</strong> Le Client dont les coordonnées sont renseignées lors de la commande, ci-après dénommé <em>« Le Client »</em>, d'autre part.</p>
+            <!-- Corps Juridique Conforme et Structuré -->
+            <div class="overflow-y-auto space-y-5 text-xs text-slate-700 leading-relaxed pr-3 legal-scroll">
                 
-                <h4 class="font-bold text-brand-navy pt-2">Article 1 : Objet de la Prestation</h4>
-                <p>Le Prestataire s'engage à concevoir, développer et mettre en ligne une page web professionnelle (portfolio/vitrine d'autorité) au nom du Client comprenant : présentation du parcours, diplômes, coordonnées, bouton direct WhatsApp et téléchargement du CV.</p>
+                <!-- Identification des Parties -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-900 mb-2 uppercase text-[11px] tracking-wide">ENTRE LES SOUSSIGNÉS :</p>
+                    <p class="mb-1.5">
+                        <strong>1. L'Agence SIMPLIX TECH GROUP</strong>, structure d'ingénierie et de visibilité digitale, sise à Abomey-Calavi (Zone IITA), République du Bénin, représentée par sa Direction Technique, ci-après dénommée <em>« Le Prestataire »</em> d'une part,
+                    </p>
+                    <p>
+                        <strong>ET :</strong> Le Client individuel ou moral identifié lors de la soumission du formulaire électronique, ci-après dénommé <em>« Le Client »</em> d'autre part.
+                    </p>
+                </div>
 
-                <h4 class="font-bold text-brand-navy pt-2">Article 2 : Tarif et Absence de Frais Récurrents</h4>
-                <p>Le coût forfaitaire global de la prestation est fixé à <strong>25.900 FCFA</strong>. Le Prestataire garantit formellement au Client un hébergement sans frais annuel (0 FCFA/an d'hébergement). Aucun renouvellement d'hébergement ne sera facturé au Client.</p>
+                <!-- Préambule -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">PRÉAMBULE</h4>
+                    <p class="text-justify">
+                        Considérant les impératifs contemporains de vérification de compétences professionnelles en ligne (due diligence), le Client souhaite établir sa présence numérique officielle afin de faire valoir son expertise auprès de ses partenaires, recruteurs et bailleurs de fonds. Le Prestataire dispose du savoir-faire technique pour concevoir et déployer une solution web d'autorité exempte de frais d'exploitation récurrents prohibitifs.
+                    </p>
+                </div>
 
-                <h4 class="font-bold text-brand-navy pt-2">Article 3 : Modalités de Paiement</h4>
-                <p>Le paiement peut être effectué au comptant ou en 3 tranches de 8.650 FCFA par Mobile Money. La première tranche est versée lors de la confirmation du projet après présentation de la maquette.</p>
+                <!-- Article 1 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 1 : OBJET DE LA PRESTATION</h4>
+                    <p class="text-justify">
+                        Le présent contrat a pour objet la conception, le développement, la configuration technique et la mise en ligne d'un site web professionnel d'autorité pour le compte du Client. La prestation inclut : l'intégration de la biographie, du parcours académique et professionnel, de la galerie de réalisations, des diplômes, l'interfaçage direct avec WhatsApp, l'intégration du document de CV téléchargeable et la configuration du partage visuel sur les réseaux sociaux (Open Graph).
+                    </p>
+                </div>
 
-                <h4 class="font-bold text-brand-navy pt-2">Article 4 : Évolutions et Mises à Jour</h4>
-                <p>Toute demande d'ajout d'activité, de formation ou d'article professionnel ultérieur fera l'objet d'une tarification préférentielle et fixe de 1.000 FCFA par ajout, sans abonnement mensuel imposé.</p>
+                <!-- Article 2 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 2 : GARANTIE TECHNIQUE ET HÉBERGEMENT À 0 FCFA/AN</h4>
+                    <p class="text-justify">
+                        Le Prestataire s'engage formellement et irrévocablement à déployer le site web du Client sur une architecture serveur sans redevance d'hébergement annuelle (0 FCFA/an d'hébergement à vie). <strong>Aucune facture de renouvellement d'hébergement ne sera imputée au Client pour maintenir son site actif.</strong> Une adresse web sous-domaine professionnelle est attribuée gratuitement et sans limite de durée. Si le Client exige un nom de domaine personnalisé de premier niveau (.com, .org), celui-ci sera rattaché à prix coûtant d'enregistrement officiel.
+                    </p>
+                </div>
+
+                <!-- Article 3 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 3 : PRIX FORFAITAIRE ET MODALITÉS DE PAIEMENT ÉCHELONNÉ</h4>
+                    <p class="text-justify">
+                        Le montant total de la réalisation est arrêté à la somme forfaitaire promotionnelle de <strong>25.900 FCFA</strong> (au lieu de 50.000 FCFA). Deux formules de règlement sont offertes au Client :
+                    </p>
+                    <ul class="list-disc pl-5 mt-1 space-y-1">
+                        <li><strong>Paiement Comptant :</strong> 25.900 FCFA soldé lors de la validation finale.</li>
+                        <li><strong>Paiement Échelonné en trois (03) tranches :</strong> une première tranche de <strong>8.650 FCFA</strong> versée au démarrage du projet après validation de la maquette préliminaire ; une deuxième tranche de <strong>8.650 FCFA</strong> lors de la validation des contenus ; et le solde de <strong>8.600 FCFA</strong> lors de la publication officielle.</li>
+                    </ul>
+                </div>
+
+                <!-- Article 4 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 4 : GESTION DES ÉVOLUTIONS À LA CARTE (TARIF SOCIAL FIXE)</h4>
+                    <p class="text-justify">
+                        Afin de préserver l'indépendance financière du Client, aucun contrat d'abonnement ou de maintenance mensuelle n'est imposé. Toute adjonction ultérieure d'activité, de certification nouvelle ou d'article professionnel est facturée au tarif contractuel fixe de <strong>1.000 FCFA par ajout</strong>.
+                    </p>
+                </div>
+
+                <!-- Article 5 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 5 : PROPRIÉTÉ INTELLECTUELLE ET CONFIDENTIALITÉ</h4>
+                    <p class="text-justify">
+                        Le Client demeure l'unique et légitime propriétaire de l'ensemble de ses photographies, diplômes, marques et textes transmis. Le Prestataire s'interdit formellement de divulguer, céder ou commercialiser les données personnelles, numéros de téléphone et coordonnées recueillis lors de la relation contractuelle.
+                    </p>
+                </div>
+
+                <!-- Article 6 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 6 : DÉLAIS DE LIVRAISON ET PROCÉDURE DE MAQUETTE</h4>
+                    <p class="text-justify">
+                        Le Prestataire s'engage à livrer la maquette préliminaire dans un délai de <strong>24 à 48 heures ouvrables</strong> à compter de la réception des éléments descriptifs. Le Client dispose d'un droit d'ajustement pour demander les révisions nécessaires à la conformité de son profil.
+                    </p>
+                </div>
+
+                <!-- Article 7 -->
+                <div>
+                    <h4 class="font-black text-brand-navy uppercase tracking-wider text-[11px] mb-1">ARTICLE 7 : LOI APPLICABLE ET JURIDICTION</h4>
+                    <p class="text-justify">
+                        La présente convention est soumise au droit béninois et aux règles régissant les transactions électroniques dans l'espace OHADA. En cas de contestation non résolue à l'amiable, compétence exclusive est attribuée aux juridictions compétentes d'Abomey-Calavi et de Cotonou.
+                    </p>
+                </div>
+
+                <!-- Visa et Sceau Institutionnel -->
+                <div class="mt-6 pt-4 border-t-2 border-slate-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+                    <div class="text-center sm:text-left">
+                        <span class="font-bold text-slate-800 block">Pour Simplix Tech Group :</span>
+                        <span>Direction des Opérations & Projets Web</span>
+                        <div class="text-emerald-700 font-bold mt-1">
+                            <i class="fas fa-stamp text-amber-500 mr-1"></i> Visa & Engagement Juridique Certifié
+                        </div>
+                    </div>
+                    <div class="text-center sm:text-right">
+                        <span class="font-bold text-slate-800 block">Pour le Client :</span>
+                        <span>Validation dématérialisée à la commande</span>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="border-t border-slate-200 pt-4 mt-4 flex justify-end">
-                <button onclick="closeContractModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs">
+            <!-- Pied du Modal -->
+            <div class="border-t border-slate-200 pt-4 mt-4 flex items-center justify-between gap-3">
+                <span class="text-[11px] text-slate-400 hidden sm:inline">
+                    Document opposable conforme aux normes OHADA.
+                </span>
+                <button onclick="closeContractModal()" class="px-6 py-2.5 rounded-xl bg-brand-navy hover:bg-slate-900 text-white font-extrabold text-xs transition active:scale-95 shadow">
                     Fermer la lecture
                 </button>
             </div>
@@ -791,9 +906,6 @@
             
             const isHidden = answer.classList.contains('hidden');
             
-            // Ferme toutes les autres
-            document.querySelectorAll('#faq-container .hidden').forEach(el => {});
-            
             if (isHidden) {
                 answer.classList.remove('hidden');
                 icon.classList.remove('fa-plus');
@@ -820,7 +932,7 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Préparation de votre dossier...';
 
-            // Message WhatsApp complet avec TOUS les champs
+            // Message WhatsApp complet avec TOUS les champs renseignés
             const waMessage = `*DEMANDE DE MAQUETTE & SITE WEB (25.900 FCFA)*%0A%0A` +
                               `👤 *Nom & Prénoms :* ${encodeURIComponent(name)}%0A` +
                               `📞 *WhatsApp :* ${encodeURIComponent(phone)}%0A` +
