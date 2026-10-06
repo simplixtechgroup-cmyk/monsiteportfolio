@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <meta name="theme-color" content="#ffffff" />
 <title>Simplix Tech Group — Agence Digitale & Ingénierie Logicielle</title>
 <meta name="description" content="Simplix Tech Group conçoit des technologies, sites web et applications adaptées aux réalités des PME et organisations en Afrique.">
@@ -35,143 +35,225 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Simplix Tech Group","description":"Agence digitale et ingénierie logicielle : sites web, PWA et applications de gestion pour PME et organisations.","email":"simplictechgroup@gmail.com","telephone":"+2290128821818","address":{"@type":"PostalAddress","addressLocality":"Abomey-Calavi","addressCountry":"BJ"}}
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/lucide@latest"></script>
+
 <style>
-:root{--bg:#fff;--paper:#F6F8FC;--ink:#0B1220;--mute:#5B6678;--line:rgba(11,18,32,.09);--blue:#1D4ED8;--blue2:#3B82F6;--amber:#F59E0B;--amber2:#D97706;
---fd:'Bricolage Grotesque',sans-serif;--fb:'Plus Jakarta Sans',sans-serif;--r:28px;--sh:0 1px 2px rgba(11,18,32,.04),0 14px 40px -14px rgba(29,78,216,.16)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-bottom:96px}
-a{color:inherit}
+:root{
+  --bg:#fff;
+  --paper:#F6F8FC;
+  --ink:#0B1220;
+  --mute:#5B6678;
+  --line:rgba(11,18,32,.09);
+  --blue:#1D4ED8;
+  --blue2:#3B82F6;
+  --amber:#F59E0B;
+  --amber2:#D97706;
+  --fd:'Bricolage Grotesque',sans-serif;
+  --fb:'Plus Jakarta Sans',sans-serif;
+  --r:28px;
+  --sh:0 1px 2px rgba(11,18,32,.04),0 14px 40px -14px rgba(29,78,216,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fb);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:110px;
+}
+a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:8px}
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--amber));z-index:300}
+
 /* loader */
 #sl-loader{position:fixed;inset:0;z-index:9999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s,visibility .6s}
-.ld-mark{width:68px;height:68px;border-radius:20px;background:linear-gradient(135deg,#1E3A8A,var(--blue));display:grid;place-items:center;color:#fff;font:800 32px var(--fd);box-shadow:0 20px 40px -10px rgba(29,78,216,.5);animation:pop 1.4s ease-in-out infinite}
-@keyframes pop{50%{transform:scale(1.08) rotate(-4deg)}}
-.ld-bar{width:130px;height:3px;background:var(--line);border-radius:3px;overflow:hidden}.ld-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--amber));animation:ld 1.4s ease-in-out infinite}
+.ld-mark{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#1E3A8A,var(--blue));display:grid;place-items:center;color:#fff;font:800 30px var(--fd);box-shadow:0 20px 40px -10px rgba(29,78,216,.5);animation:pop 1.4s ease-in-out infinite}
+@keyframes pop{50%{transform:scale(1.06) rotate(-3deg)}}
+.ld-bar{width:130px;height:3px;background:var(--line);border-radius:3px;overflow:hidden}
+.ld-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--amber));animation:ld 1.4s ease-in-out infinite}
 @keyframes ld{0%{width:0;margin-left:0}50%{width:70%;margin-left:15%}100%{width:0;margin-left:100%}}
+
 /* header */
-.sl-header{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 28px));z-index:100;height:64px;padding:0 12px 0 20px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.78);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);border:1px solid var(--line);border-radius:22px;transition:.3s}
-.sl-header.scrolled{box-shadow:var(--sh);background:rgba(255,255,255,.92)}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sl-header{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 24px));z-index:100;height:64px;padding:0 12px 0 16px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.82);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);border:1px solid var(--line);border-radius:22px;transition:.3s}
+.sl-header.scrolled{box-shadow:var(--sh);background:rgba(255,255,255,.94)}
+.logo{display:flex;align-items:center;gap:10px}
 .logo-i{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#1E3A8A,var(--blue));display:grid;place-items:center;color:#fff;font:800 19px var(--fd)}
-.logo-t{font:800 18px/1 var(--fd);letter-spacing:-.4px}.logo-t small{display:block;font:600 10px var(--fb);color:var(--amber2);letter-spacing:.5px;margin-top:3px}
-.sl-nav{display:flex;gap:2px}.sl-nav a{padding:8px 15px;border-radius:12px;font-size:13.5px;font-weight:600;color:var(--mute);text-decoration:none;transition:.2s}.sl-nav a:hover{background:var(--paper);color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:700 14px var(--fb);text-decoration:none;border-radius:16px;padding:14px 26px;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
-.btn i{transition:transform .25s}.btn:hover i{transform:translateX(4px)}.btn:hover{transform:translateY(-2px)}
+.logo-t{font:800 17px/1 var(--fd);letter-spacing:-.4px}
+.logo-t small{display:block;font:700 9px var(--fb);color:var(--amber2);letter-spacing:.6px;margin-top:2px;text-transform:uppercase}
+.sl-nav{display:flex;gap:2px}
+.sl-nav a{padding:8px 14px;border-radius:12px;font-size:13.5px;font-weight:600;color:var(--mute);transition:.2s}
+.sl-nav a:hover{background:var(--paper);color:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:700 14px var(--fb);border-radius:16px;padding:14px 26px;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s;text-align:center}
+.btn i{transition:transform .25s}.btn:hover i{transform:translateX(3px)}.btn:hover{transform:translateY(-2px)}
 .btn-ink{background:var(--ink);color:#fff;box-shadow:0 10px 24px -8px rgba(11,18,32,.45)}
 .btn-amber{background:linear-gradient(135deg,#FBBF24,var(--amber2));color:var(--ink);box-shadow:0 12px 28px -8px rgba(245,158,11,.55)}
 .btn-line{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:var(--sh)}
-.btn-sm{padding:10px 18px;font-size:13px;border-radius:13px}
-.wrap{max-width:1160px;margin:0 auto;padding:0 24px;position:relative}
-section{padding:130px 0}
-.tag{display:inline-flex;align-items:center;gap:8px;font:700 13px var(--fb);color:var(--blue);background:rgba(29,78,216,.07);padding:7px 15px;border-radius:99px;margin-bottom:20px}
-.tag::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--amber)}
-h2.t{font:800 clamp(34px,5vw,58px)/1.05 var(--fd);letter-spacing:-2px;margin-bottom:20px}
-.lead{font-size:17px;color:var(--mute);max-width:560px}
-.center{text-align:center;margin:0 auto 64px;max-width:720px}.center .lead{margin:0 auto}
+.btn-sm{padding:9px 16px;font-size:12.5px;border-radius:12px}
+
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px;position:relative}
+section{padding:100px 0}
+.tag{display:inline-flex;align-items:center;gap:8px;font:700 12px var(--fb);color:var(--blue);background:rgba(29,78,216,.07);padding:6px 14px;border-radius:99px;margin-bottom:18px}
+.tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber)}
+
+/* Typographie révisée (Anti-écrasement des lettres) */
+h2.t{font:800 clamp(26px,4.5vw,52px)/1.1 var(--fd);letter-spacing:-1px;margin-bottom:18px}
+.lead{font-size:clamp(15px,2vw,17px);color:var(--mute);max-width:580px;line-height:1.7}
+.center{text-align:center;margin:0 auto 54px;max-width:720px}.center .lead{margin:0 auto}
+
 /* hero */
-.hero{position:relative;padding:170px 0 90px;overflow:hidden;background:
-radial-gradient(60% 50% at 85% 10%,rgba(245,158,11,.20),transparent 70%),radial-gradient(55% 55% at 10% 20%,rgba(59,130,246,.18),transparent 70%),#fff}
-.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);padding:6px 16px 6px 8px;border-radius:99px;font-size:13px;font-weight:600;margin-bottom:28px}
-.pill b{background:var(--amber);color:var(--ink);border-radius:99px;padding:2px 10px;font-size:11px}
-.hero h1{font:800 clamp(44px,7vw,92px)/.98 var(--fd);letter-spacing:-3.5px;margin-bottom:26px}
-.type{color:var(--blue);display:inline-block;min-height:1em;background:linear-gradient(transparent 68%,rgba(245,158,11,.38) 68%)}
+.hero{position:relative;padding:140px 0 70px;overflow:hidden;background:radial-gradient(60% 50% at 85% 10%,rgba(245,158,11,.18),transparent 70%),radial-gradient(55% 55% at 10% 20%,rgba(59,130,246,.15),transparent 70%),#fff}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);padding:6px 14px 6px 8px;border-radius:99px;font-size:12px;font-weight:600;margin-bottom:24px}
+.pill b{background:var(--amber);color:var(--ink);border-radius:99px;padding:2px 8px;font-size:10.5px}
+
+.hero h1{font:800 clamp(34px,6.2vw,84px)/1.02 var(--fd);letter-spacing:-1.5px;margin-bottom:22px}
+@media(min-width:768px){.hero h1{letter-spacing:-3px}}
+
+.type{color:var(--blue);display:inline-block;min-height:1em;background:linear-gradient(transparent 68%,rgba(245,158,11,.32) 68%)}
 .cur{color:var(--amber2);font-weight:300;animation:bl .8s step-end infinite}@keyframes bl{50%{opacity:0}}
-.hero .lead{margin-bottom:38px;font-size:18px}
-.acts{display:flex;gap:14px;flex-wrap:wrap}
+.hero .lead{margin-bottom:34px}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+
 /* hero mockup */
-.stage{position:relative;height:480px}
-.win{position:absolute;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 60px -20px rgba(29,78,216,.28),0 2px 6px rgba(11,18,32,.05)}
-.win.a{inset:20px 0 auto 24px;height:300px;padding:16px;animation:fl 7s ease-in-out infinite}
-.dots{display:flex;gap:6px;margin-bottom:14px}.dots i{width:10px;height:10px;border-radius:50%;background:#FCA5A5}.dots i:nth-child(2){background:#FCD34D}.dots i:nth-child(3){background:#86EFAC}
-.sk{height:10px;border-radius:6px;background:var(--paper);margin-bottom:9px}.sk.h{height:70px;border-radius:14px;background:linear-gradient(120deg,#DBEAFE,#FEF3C7);margin-bottom:14px}
-.bars{display:flex;gap:8px;align-items:flex-end;height:90px;margin-top:14px}.bars i{flex:1;border-radius:7px 7px 3px 3px;background:linear-gradient(var(--blue2),var(--blue));transform-origin:bottom;animation:gr 2.6s ease-in-out infinite alternate}
+.stage{position:relative;height:420px;width:100%}
+.win{position:absolute;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 50px -16px rgba(29,78,216,.25),0 2px 6px rgba(11,18,32,.04)}
+.win.a{inset:10px 10px auto 10px;height:270px;padding:16px;animation:fl 7s ease-in-out infinite}
+.dots{display:flex;gap:5px;margin-bottom:12px}.dots i{width:9px;height:9px;border-radius:50%;background:#FCA5A5}.dots i:nth-child(2){background:#FCD34D}.dots i:nth-child(3){background:#86EFAC}
+.sk{height:9px;border-radius:6px;background:var(--paper);margin-bottom:8px}.sk.h{height:60px;border-radius:12px;background:linear-gradient(120deg,#DBEAFE,#FEF3C7);margin-bottom:12px}
+.bars{display:flex;gap:7px;align-items:flex-end;height:80px;margin-top:12px}.bars i{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(var(--blue2),var(--blue));transform-origin:bottom;animation:gr 2.6s ease-in-out infinite alternate}
 .bars i:nth-child(1){height:40%}.bars i:nth-child(2){height:65%;animation-delay:.2s}.bars i:nth-child(3){height:50%;animation-delay:.4s;background:linear-gradient(#FCD34D,var(--amber))}.bars i:nth-child(4){height:85%;animation-delay:.6s}.bars i:nth-child(5){height:70%;animation-delay:.8s}
-@keyframes gr{to{transform:scaleY(.72)}}@keyframes fl{50%{transform:translateY(-12px)}}
-.win.b{width:190px;left:-10px;bottom:70px;padding:16px;animation:fl 6s ease-in-out -2s infinite}
-.win.c{width:210px;right:-6px;bottom:10px;padding:14px 16px;animation:fl 8s ease-in-out -4s infinite;display:flex;gap:12px;align-items:center}
-.ok{width:38px;height:38px;border-radius:12px;background:#DCFCE7;color:#16A34A;display:grid;place-items:center;flex-shrink:0}
-.win small{font-size:11px;color:var(--mute);display:block;line-height:1.3}.win strong{font:800 15px var(--fd)}
-.off{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700}.off::before{content:'';width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+@keyframes gr{to{transform:scaleY(.72)}}@keyframes fl{50%{transform:translateY(-8px)}}
+.win.b{width:170px;left:0;bottom:50px;padding:14px;animation:fl 6s ease-in-out -2s infinite}
+.win.c{width:190px;right:0;bottom:10px;padding:12px 14px;animation:fl 8s ease-in-out -4s infinite;display:flex;gap:10px;align-items:center}
+.ok{width:34px;height:34px;border-radius:10px;background:#DCFCE7;color:#16A34A;display:grid;place-items:center;flex-shrink:0}
+.win small{font-size:10.5px;color:var(--mute);display:block;line-height:1.2}.win strong{font:800 14px var(--fd)}
+.off{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700}.off::before{content:'';width:7px;height:7px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+
 /* marquee */
-.mq{border-block:1px solid var(--line);background:#fff;overflow:hidden;padding:22px 0}
-.mq-t{display:flex;gap:56px;width:max-content;animation:mq 30s linear infinite}.mq:hover .mq-t{animation-play-state:paused}
-.mq span{display:flex;align-items:center;gap:10px;font:700 18px var(--fd);color:var(--mute);white-space:nowrap}.mq i{color:var(--blue);width:20px}
+.mq{border-block:1px solid var(--line);background:#fff;overflow:hidden;padding:18px 0}
+.mq-t{display:flex;gap:40px;width:max-content;animation:mq 30s linear infinite}.mq:hover .mq-t{animation-play-state:paused}
+.mq span{display:flex;align-items:center;gap:8px;font:700 16px var(--fd);color:var(--mute);white-space:nowrap}.mq i{color:var(--blue);width:18px}
 @keyframes mq{to{transform:translateX(-50%)}}
+
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:-10px}
-.stat{padding:34px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line)}
-.stat b{display:block;font:800 clamp(44px,6vw,72px)/1 var(--fd);letter-spacing:-3px;color:var(--blue)}.stat span{color:var(--mute);font-weight:600;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-10px}
+.stat{padding:26px 20px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);text-align:center}
+.stat b{display:block;font:800 clamp(36px,5.5vw,68px)/1 var(--fd);letter-spacing:-2px;color:var(--blue);margin-bottom:6px}.stat span{color:var(--mute);font-weight:600;font-size:13px}
+
 /* philosophy */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.photo{border-radius:var(--r);overflow:hidden;height:480px;position:relative;box-shadow:var(--sh)}
-.photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.photo:hover img{transform:scale(1.06)}
-.photo .badge{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);padding:12px 18px;border-radius:16px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:10px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.photo{border-radius:var(--r);overflow:hidden;height:440px;position:relative;box-shadow:var(--sh)}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.photo:hover img{transform:scale(1.05)}
+.photo .badge{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);padding:10px 16px;border-radius:14px;font-weight:700;font-size:12px;display:flex;align-items:center;gap:8px}
+
 /* bento */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:36px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
 .card::after{content:'';position:absolute;inset:0;background:radial-gradient(380px circle at var(--x,50%) var(--y,0%),rgba(59,130,246,.12),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
-.card:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:rgba(29,78,216,.35)}.card:hover::after{opacity:1}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:rgba(29,78,216,.35)}.card:hover::after{opacity:1}
 .card.w3{grid-column:span 3}.card.w2{grid-column:span 2}.card.w4{grid-column:span 4}
 .card.feat{background:linear-gradient(150deg,#FFFBEB,#fff 60%);border-color:rgba(245,158,11,.4)}
-.ic{width:56px;height:56px;border-radius:18px;background:rgba(29,78,216,.08);color:var(--blue);display:grid;place-items:center;margin-bottom:22px;transition:.4s}.card:hover .ic{transform:rotate(-8deg) scale(1.08);background:var(--blue);color:#fff}
+.ic{width:50px;height:50px;border-radius:16px;background:rgba(29,78,216,.08);color:var(--blue);display:grid;place-items:center;margin-bottom:18px;transition:.3s}.card:hover .ic{transform:rotate(-6deg) scale(1.06);background:var(--blue);color:#fff}
 .feat .ic{background:rgba(245,158,11,.18);color:var(--amber2)}
-.card h3,.card h4{font:800 25px/1.15 var(--fd);letter-spacing:-.8px;margin-bottom:12px}
-.card p{color:var(--mute);font-size:15px}
-.card ul{list-style:none;margin-top:auto;padding-top:22px;display:grid;gap:9px;font-size:14px;font-weight:600}.card li{display:flex;gap:9px;align-items:center}.card li i{width:17px;color:var(--blue)}
-.more{margin-top:22px;font-weight:800;font-size:14px;color:var(--blue);display:flex;align-items:center;gap:6px}.feat .more{color:var(--amber2)}
-.price{position:absolute;top:30px;right:30px;background:var(--ink);color:#fff;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:700}
-.tech{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:70px}
-.tech div{display:flex;align-items:center;gap:12px;padding:18px;border-radius:20px;background:var(--paper);font-weight:700;font-size:14px;transition:.3s}.tech div:hover{background:#fff;box-shadow:var(--sh);transform:translateY(-3px)}.tech i{color:var(--blue)}
+.card h3,.card h4{font:800 22px/1.2 var(--fd);letter-spacing:-.6px;margin-bottom:10px}
+.card p{color:var(--mute);font-size:14px;line-height:1.6}
+.card ul{list-style:none;margin-top:auto;padding-top:18px;display:grid;gap:8px;font-size:13px;font-weight:600}.card li{display:flex;gap:8px;align-items:center}.card li i{width:16px;color:var(--blue);flex-shrink:0}
+.more{margin-top:18px;font-weight:800;font-size:13.5px;color:var(--blue);display:flex;align-items:center;gap:6px}.feat .more{color:var(--amber2)}
+.price{position:absolute;top:20px;right:20px;background:var(--ink);color:#fff;border-radius:99px;padding:4px 12px;font-size:11.5px;font-weight:700}
+.tech{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:50px}
+.tech div{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;background:var(--paper);font-weight:700;font-size:13px;transition:.25s}.tech div:hover{background:#fff;box-shadow:var(--sh);transform:translateY(-2px)}.tech i{color:var(--blue);width:18px}
+
 /* about */
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:90px}.trio .card{cursor:default}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:70px}.trio .card{cursor:default}
+
 /* work */
-.work{display:grid;grid-template-columns:5fr 6fr;background:#fff;border:1px solid var(--line);border-radius:36px;overflow:hidden;margin-bottom:28px;transition:.4s}
+.work{display:grid;grid-template-columns:5fr 6fr;background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;margin-bottom:24px;transition:.3s}
 .work:hover{box-shadow:var(--sh)}.work:nth-child(odd) .pic{order:2}
-.pic{min-height:360px;position:relative;overflow:hidden}.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}.work:hover .pic img{transform:scale(1.06)}
-.inf{padding:50px;display:flex;flex-direction:column;justify-content:center}
-.chip{align-self:flex-start;background:rgba(245,158,11,.15);color:var(--amber2);font-weight:700;font-size:12.5px;padding:6px 14px;border-radius:99px;margin-bottom:18px}
-.inf h3{font:800 30px/1.1 var(--fd);letter-spacing:-1px;margin-bottom:14px}.inf>p{color:var(--mute);margin-bottom:24px}
-.met{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}.met div{background:var(--paper);border-radius:18px;padding:16px 20px}
-.met small{display:block;font-size:12px;color:var(--mute);font-weight:600}.met b{font:800 24px var(--fd);color:var(--blue)}
-.tags{display:flex;gap:8px;flex-wrap:wrap}.tags span{border:1px solid var(--line);border-radius:99px;padding:5px 13px;font-size:12px;font-weight:700}
-.cta{margin-top:70px;border-radius:40px;padding:90px 30px;text-align:center;background:radial-gradient(60% 80% at 20% 0%,rgba(59,130,246,.35),transparent 70%),radial-gradient(50% 70% at 90% 100%,rgba(245,158,11,.4),transparent 70%),linear-gradient(135deg,#1E3A8A,#1D4ED8);color:#fff;position:relative;overflow:hidden}
-.cta .tag{background:rgba(255,255,255,.18);color:#fff}.cta h3{font:800 clamp(32px,5vw,56px)/1.05 var(--fd);letter-spacing:-2px;margin-bottom:16px}.cta p{color:rgba(255,255,255,.85);max-width:520px;margin:0 auto 34px}
+.pic{min-height:300px;position:relative;overflow:hidden}.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}.work:hover .pic img{transform:scale(1.05)}
+.inf{padding:36px;display:flex;flex-direction:column;justify-content:center}
+.chip{align-self:flex-start;background:rgba(245,158,11,.15);color:var(--amber2);font-weight:700;font-size:11.5px;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.inf h3{font:800 clamp(22px,3vw,28px)/1.15 var(--fd);letter-spacing:-.8px;margin-bottom:12px}.inf>p{color:var(--mute);margin-bottom:20px;font-size:14px}
+.met{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}.met div{background:var(--paper);border-radius:16px;padding:14px 16px}
+.met small{display:block;font-size:11px;color:var(--mute);font-weight:600}.met b{font:800 20px var(--fd);color:var(--blue)}
+.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{border:1px solid var(--line);border-radius:99px;padding:4px 11px;font-size:11.5px;font-weight:700}
+.cta{margin-top:60px;border-radius:32px;padding:70px 24px;text-align:center;background:radial-gradient(60% 80% at 20% 0%,rgba(59,130,246,.35),transparent 70%),radial-gradient(50% 70% at 90% 100%,rgba(245,158,11,.4),transparent 70%),linear-gradient(135deg,#1E3A8A,#1D4ED8);color:#fff;position:relative;overflow:hidden}
+.cta .tag{background:rgba(255,255,255,.18);color:#fff}.cta h3{font:800 clamp(28px,4.5vw,50px)/1.08 var(--fd);letter-spacing:-1.5px;margin-bottom:14px}.cta p{color:rgba(255,255,255,.85);max-width:500px;margin:0 auto 28px;font-size:15px}
+
 /* contact */
-.g2c{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.cbox{display:grid;gap:14px}
-.citem{display:flex;align-items:center;gap:18px;padding:22px 24px;border-radius:24px;border:1px solid var(--line);background:#fff;text-decoration:none;transition:.3s}.citem:hover{transform:translateX(8px);box-shadow:var(--sh);border-color:var(--blue)}
-.cic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;flex-shrink:0}.citem small{font-size:12px;color:var(--mute);font-weight:600;display:block}.citem strong{font:700 17px var(--fd)}
+.g2c{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.cbox{display:grid;gap:12px}
+.citem{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:20px;border:1px solid var(--line);background:#fff;transition:.3s}.citem:hover{transform:translateX(6px);box-shadow:var(--sh);border-color:var(--blue)}
+.cic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;flex-shrink:0}.citem small{font-size:11px;color:var(--mute);font-weight:600;display:block}.citem strong{font:700 15px var(--fd)}
+
 /* faq */
-.faq{max-width:800px;margin:0 auto;display:grid;gap:12px}
-.fq{border:1px solid var(--line);border-radius:22px;background:#fff;transition:.3s}.fq.open{border-color:var(--blue);box-shadow:var(--sh)}
-.fq button{width:100%;padding:24px 28px;background:none;border:0;text-align:left;font:700 17px var(--fd);color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer}
+.faq{max-width:800px;margin:0 auto;display:grid;gap:10px}
+.fq{border:1px solid var(--line);border-radius:18px;background:#fff;transition:.3s}.fq.open{border-color:var(--blue);box-shadow:var(--sh)}
+.fq button{width:100%;padding:20px 22px;background:none;border:0;text-align:left;font:700 15.5px var(--fd);color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer}
 .fq button i{transition:transform .35s;color:var(--blue);flex-shrink:0}.fq.open button i{transform:rotate(180deg)}
-.fa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}.fq.open .fa{grid-template-rows:1fr}.fa>div{overflow:hidden;padding:0 28px;color:var(--mute);font-size:15px}.fq.open .fa>div{padding-bottom:26px}
-footer{background:var(--paper);border-top:1px solid var(--line);padding:80px 0 60px;text-align:center}
-footer .logo-i{width:52px;height:52px;font-size:26px;margin:0 auto 16px;border-radius:16px}
-.big{font:800 clamp(48px,13vw,170px)/.9 var(--fd);letter-spacing:-6px;background:linear-gradient(180deg,rgba(11,18,32,.12),rgba(11,18,32,0));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:30px;user-select:none}
+.fa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}.fq.open .fa{grid-template-rows:1fr}.fa>div{overflow:hidden;padding:0 22px;color:var(--mute);font-size:14px}.fq.open .fa>div{padding-bottom:20px}
+
+footer{background:var(--paper);border-top:1px solid var(--line);padding:70px 0 50px;text-align:center}
+footer .logo-i{width:46px;height:46px;font-size:22px;margin:0 auto 14px;border-radius:14px}
+.big{font:800 clamp(44px,12vw,150px)/.9 var(--fd);letter-spacing:-4px;background:linear-gradient(180deg,rgba(11,18,32,.1),rgba(11,18,32,0));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;user-select:none}
+
 /* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
-/* banner */
-.banner{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);width:min(620px,calc(100% - 28px));z-index:90}
-#rotating-banner{background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:22px;padding:8px 8px 8px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 20px 50px -12px rgba(11,18,32,.28);cursor:pointer;transition:opacity .3s,transform .3s}
-/* admin + modals */
-#sl-admin-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:200;background:var(--amber);padding:8px 24px;align-items:center;justify-content:space-between;gap:12px}
-#sl-admin-bar span{font-size:12px;font-weight:800;display:flex;align-items:center;gap:8px}#sl-admin-bar button{background:var(--ink);color:#fff;border:0;border-radius:8px;padding:6px 14px;font:700 12px var(--fb);cursor:pointer;display:flex;gap:6px;align-items:center}
-.ovl{display:none;position:fixed;inset:0;z-index:500;background:rgba(11,18,32,.55);backdrop-filter:blur(10px);overflow-y:auto;padding:20px}
-.mbox{max-width:560px;margin:40px auto;background:#fff;border-radius:32px;padding:36px;position:relative;box-shadow:0 40px 80px -20px rgba(0,0,0,.45);animation:mo .35s cubic-bezier(.2,.8,.2,1)}@keyframes mo{from{opacity:0;transform:translateY(20px) scale(.97)}}
-.x{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:var(--paper);border:0;cursor:pointer;display:grid;place-items:center;color:var(--mute)}
-.fld{margin-bottom:16px}.fld label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
-.inp{width:100%;background:var(--paper);border:1.5px solid transparent;border-radius:14px;padding:13px 16px;font:500 14px var(--fb);color:var(--ink);outline:none;transition:.2s}.inp:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(29,78,216,.1)}
-@media(max-width:991px){.sl-nav{display:none}.hero-grid,.g2,.g2c,.work{grid-template-columns:1fr}.stage{height:420px}.work:nth-child(odd) .pic{order:0}.bento{grid-template-columns:1fr 1fr}.card.w3,.card.w4,.card.w2{grid-column:span 2}.trio{grid-template-columns:1fr}}
-@media(max-width:640px){section{padding:84px 0}.stats{grid-template-columns:1fr}.inf{padding:30px}.hero{padding-top:130px}.sl-header .btn span{display:none}.photo{height:340px}.win.b{display:none}}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+
+/* bannière rotative mobile friendly */
+.banner{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:min(620px,calc(100% - 20px));z-index:90}
+#rotating-banner{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid var(--line);border-radius:20px;padding:8px 10px 8px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;box-shadow:0 16px 40px -10px rgba(11,18,32,.25);cursor:pointer;transition:opacity .3s,transform .3s}
+
+/* modales */
+#sl-admin-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:200;background:var(--amber);padding:8px 16px;align-items:center;justify-content:space-between;gap:10px}
+#sl-admin-bar span{font-size:11.5px;font-weight:800;display:flex;align-items:center;gap:6px}
+#sl-admin-bar button{background:var(--ink);color:#fff;border:0;border-radius:7px;padding:5px 12px;font:700 11.5px var(--fb);cursor:pointer;display:flex;gap:5px;align-items:center}
+.ovl{display:none;position:fixed;inset:0;z-index:500;background:rgba(11,18,32,.65);backdrop-filter:blur(10px);overflow-y:auto;padding:16px}
+.mbox{max-width:520px;width:100%;margin:30px auto;background:#fff;border-radius:26px;padding:30px 22px;position:relative;box-shadow:0 35px 70px -20px rgba(0,0,0,.45);animation:mo .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes mo{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.x{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--paper);border:0;cursor:pointer;display:grid;place-items:center;color:var(--mute)}
+.fld{margin-bottom:14px}.fld label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}
+.inp{width:100%;background:var(--paper);border:1.5px solid transparent;border-radius:12px;padding:12px 14px;font:500 13.5px var(--fb);color:var(--ink);outline:none;transition:.2s}
+.inp:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(29,78,216,.1)}
+
+/* ================= AJUSTEMENTS RESPONSIVE ÉLITES ================= */
+@media(max-width:991px){
+  .sl-nav{display:none}
+  .hero-grid,.g2,.g2c,.work{grid-template-columns:1fr;gap:36px}
+  .stage{height:380px}
+  .work:nth-child(odd) .pic{order:0}
+  .bento{grid-template-columns:1fr 1fr}
+  .card.w3,.card.w4,.card.w2{grid-column:span 2}
+  .trio{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  section{padding:70px 0}
+  .hero{padding-top:105px;padding-bottom:50px}
+  .hero .acts{flex-direction:column;width:100%}
+  .hero .acts .btn{width:100%}
+  .stage{height:330px}
+  .win.b{display:none}
+  .win.a{inset:0 0 auto 0;height:240px;padding:12px}
+  .win.c{bottom:0;right:0;width:100%;max-width:260px}
+  .stats{grid-template-columns:1fr;gap:12px}
+  .bento{grid-template-columns:1fr}
+  .card.w3,.card.w4,.card.w2{grid-column:span 1}
+  .card{padding:22px 18px}
+  .inf{padding:24px 18px}
+  .photo{height:300px}
+  .sl-header{height:58px;padding:0 8px 0 14px}
+  .sl-header .btn{padding:8px 12px;font-size:12px;border-radius:10px}
+  .sl-header .btn span{display:inline-block} /* RESTE VISIBLE ! */
+  .logo-t small{display:none}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -179,39 +261,68 @@ footer .logo-i{width:52px;height:52px;font-size:26px;margin:0 auto 16px;border-r
 <div id="progress"></div>
 <div id="sl-loader"><div class="ld-mark">S</div><div class="ld-bar"><i></i></div></div>
 
-<div id="sl-admin-bar"><span><i data-lucide="settings" style="width:16px"></i> Mode administration actif — Simplix Tech Group</span><button onclick="ouvrirPanneauAdmin()"><i data-lucide="pencil" style="width:14px"></i> Éditer les contenus</button></div>
+<!-- BARRE D'ADMINISTRATION -->
+<div id="sl-admin-bar">
+  <span><i data-lucide="settings" style="width:15px"></i> Administration</span>
+  <button onclick="ouvrirPanneauAdmin()"><i data-lucide="pencil" style="width:13px"></i> Modifier</button>
+</div>
 
+<!-- HEADER FLOTTANT -->
 <header class="sl-header" id="sl-header">
-  <a href="#hero" class="logo"><div class="logo-i">S</div><div class="logo-t">Simplix<small>Tech Group</small></div></a>
+  <a href="#hero" class="logo">
+    <div class="logo-i">S</div>
+    <div class="logo-t">Simplix<small>Tech Group</small></div>
+  </a>
   <nav class="sl-nav">
-    <a href="#solutions">Expertises</a><a href="#realisations">Réalisations</a><a href="#apropos">À propos</a><a href="#contact">Contact</a>
-    <a href="offre.html" style="color:var(--amber2);background:rgba(245,158,11,.12)">✨ Maquette gratuite</a>
+    <a href="#solutions">Expertises</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact">Contact</a>
+    <a href="offre.html" style="color:var(--amber2);background:rgba(245,158,11,.12);font-weight:700">✨ Maquette gratuite</a>
   </nav>
-  <a href="offre.html" class="btn btn-ink btn-sm"><span>Demander une maquette</span><i data-lucide="arrow-right" style="width:15px"></i></a>
+  <a href="offre.html" class="btn btn-ink btn-sm">
+    <span>Maquette</span><i data-lucide="arrow-right" style="width:14px"></i>
+  </a>
 </header>
 
-<section class="hero" id="hero" style="padding-bottom:90px">
+<!-- HERO -->
+<section class="hero" id="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="pill rv"><b>Nouveau</b> Votre site pro à 29.900 F, .com offert</div>
+      <div class="pill rv"><b>Nouveau</b> Votre site pro à 29.900 F • .com offert</div>
       <h1 class="rv">Des solutions logicielles taillées pour <span id="dynamic-text" class="type"></span><span class="cur">|</span></h1>
       <p class="lead rv" id="sl-hero-subtitle">Simplix Tech Group conçoit des technologies adaptées aux réalités des communautés, des PME et des organisations modernes en Afrique et à l'international.</p>
       <div class="acts rv">
-        <a class="btn btn-amber" href="#solutions">Découvrir nos solutions <i data-lucide="arrow-right" style="width:16px"></i></a>
+        <a class="btn btn-amber" href="#solutions">Découvrir nos solutions <i data-lucide="arrow-right" style="width:15px"></i></a>
         <a class="btn btn-line" href="#contact">Discuter de votre projet</a>
       </div>
     </div>
     <div class="stage rv" aria-hidden="true">
-      <div class="win a"><div class="dots"><i></i><i></i><i></i></div><div class="sk h"></div><div class="sk" style="width:70%"></div><div class="sk" style="width:45%"></div><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
-      <div class="win b"><small>Mode hors-ligne</small><strong>Synchronisé</strong><div class="off" style="margin-top:10px">3 saisies en attente</div></div>
-      <div class="win c"><div class="ok"><i data-lucide="check" style="width:20px"></i></div><div><small>Recouvrement loyers</small><strong>98 % ce mois</strong></div></div>
+      <div class="win a">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="sk h"></div>
+        <div class="sk" style="width:70%"></div>
+        <div class="sk" style="width:45%"></div>
+        <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="win b">
+        <small>Mode hors-ligne</small>
+        <strong>Synchronisé</strong>
+        <div class="off" style="margin-top:8px">3 saisies en attente</div>
+      </div>
+      <div class="win c">
+        <div class="ok"><i data-lucide="check" style="width:18px"></i></div>
+        <div><small>Recouvrement loyers</small><strong>98 % ce mois</strong></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="mq" aria-hidden="true"><div class="mq-t" id="mq"></div></div>
 
-<section style="padding-top:90px;padding-bottom:0">
+<!-- STATS -->
+<section style="padding-top:70px;padding-bottom:0">
   <div class="wrap"><div class="stats">
     <div class="stat rv"><b data-n="3" data-s="+">0</b><span>Produits phares en production</span></div>
     <div class="stat rv"><b data-n="100" data-s="%">0</b><span>Fidélité client</span></div>
@@ -219,57 +330,95 @@ footer .logo-i{width:52px;height:52px;font-size:26px;margin:0 auto 16px;border-r
   </div></div>
 </section>
 
+<!-- PHILOSOPHIE -->
 <section id="intro">
   <div class="wrap g2">
-    <div class="photo rv"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Équipe technique africaine" /><div class="badge"><i data-lucide="map-pin" style="width:16px;color:var(--blue)"></i> Conçu sur le terrain, à Abomey-Calavi</div></div>
+    <div class="photo rv">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Équipe technique africaine" />
+      <div class="badge"><i data-lucide="map-pin" style="width:15px;color:var(--blue)"></i> Conçu sur le terrain, à Abomey-Calavi</div>
+    </div>
     <div class="rv">
       <span class="tag">Notre philosophie</span>
       <h2 class="t">Simplifier la complexité.</h2>
       <p class="lead">Nous pensons que la valeur d'une technologie se mesure à son utilité concrète. Que ce soit pour optimiser la gestion de votre organisation ou renforcer l'impact d'une initiative sociale, nous concevons des outils fluides, robustes et optimisés pour le terrain.</p>
-      <div style="margin-top:36px"><a class="btn btn-ink" href="#apropos">Notre ADN <i data-lucide="arrow-right" style="width:16px"></i></a></div>
+      <div style="margin-top:30px"><a class="btn btn-ink" href="#apropos">Notre ADN <i data-lucide="arrow-right" style="width:15px"></i></a></div>
     </div>
   </div>
 </section>
 
+<!-- SERVICES & BENTO -->
 <section id="solutions" style="background:var(--paper)">
   <div class="wrap">
-    <div class="center rv"><span class="tag">Nos services</span><h2 class="t">Concevoir pour chaque besoin.</h2><p class="lead">Chaque domaine demande des outils spécifiques. Notre expertise s'articule autour de trois piliers complémentaires.</p></div>
+    <div class="center rv">
+      <span class="tag">Nos services</span>
+      <h2 class="t">Concevoir pour chaque besoin.</h2>
+      <p class="lead">Chaque domaine demande des outils spécifiques. Notre expertise s'articule autour de trois piliers complémentaires.</p>
+    </div>
     <div class="bento">
+      <!-- CARTE 1 : SITE D'AUTORITÉ 29.900 F -->
       <div class="card w3 feat rv" onclick="window.location.href='offre.html'">
         <span class="price">29.900 F</span>
         <div class="ic"><i data-lucide="user-check"></i></div>
         <h3 id="sl-dom1-title">Sites d'Autorité (Pro)</h3>
         <p id="sl-dom1-text">Portfolios premium pour consultants, formateurs et experts. Indexation Google, design parfait et domaine .com offert.</p>
-        <ul><li><i data-lucide="check-circle-2"></i>Domaine .com offert</li><li><i data-lucide="check-circle-2"></i>0 FCFA/an d'hébergement</li><li><i data-lucide="check-circle-2"></i>Bouton WhatsApp direct</li></ul>
-        <div class="more">Voir l'offre <i data-lucide="arrow-right" style="width:15px"></i></div>
+        <ul>
+          <li><i data-lucide="check-circle-2"></i>Domaine .com offert</li>
+          <li><i data-lucide="check-circle-2"></i>0 FCFA/an d'hébergement</li>
+          <li><i data-lucide="check-circle-2"></i>Bouton WhatsApp direct</li>
+        </ul>
+        <div class="more">Voir l'offre <i data-lucide="arrow-right" style="width:14px"></i></div>
       </div>
+      <!-- CARTE 2 : ENTREPRISES & PME -->
       <div class="card w3 rv" onclick="openProjectModal('Site d\'Entreprise / ONG')">
         <div class="ic"><i data-lucide="building-2"></i></div>
         <h3 id="sl-dom2-title">Entreprises &amp; PME</h3>
         <p id="sl-dom2-text">Vitrines institutionnelles sur-mesure pour entreprises et ONG. Présentation de services, intégration de devis et SEO avancé.</p>
-        <ul><li><i data-lucide="check-circle-2"></i>Suivi analytique d'activité</li><li><i data-lucide="check-circle-2"></i>Automatisation de facturation</li><li><i data-lucide="check-circle-2"></i>Centralisation des données client</li></ul>
-        <div class="more">Demander un devis <i data-lucide="arrow-right" style="width:15px"></i></div>
+        <ul>
+          <li><i data-lucide="check-circle-2"></i>Suivi analytique d'activité</li>
+          <li><i data-lucide="check-circle-2"></i>Automatisation de facturation</li>
+          <li><i data-lucide="check-circle-2"></i>Centralisation des données client</li>
+        </ul>
+        <div class="more">Demander un devis <i data-lucide="arrow-right" style="width:14px"></i></div>
       </div>
+      <!-- CARTE 3 : APPLICATIONS PWA -->
       <div class="card w4 rv" onclick="openProjectModal('Application Web / Mobile')">
         <div class="ic"><i data-lucide="smartphone"></i></div>
         <h3 id="sl-dom3-title">Applications (PWA)</h3>
         <p id="sl-dom3-text">Développement d'applications web et mobiles (SaaS, gestion interne, e-commerce) avec fonctionnement hors-ligne (Offline-First).</p>
-        <ul><li><i data-lucide="check-circle-2"></i>Automatisation No-Code / Low-Code</li><li><i data-lucide="check-circle-2"></i>Synchronisation d'équipe</li><li><i data-lucide="check-circle-2"></i>Légèreté et vitesse d'accès</li></ul>
-        <div class="more">Parler à un ingénieur <i data-lucide="arrow-right" style="width:15px"></i></div>
+        <ul>
+          <li><i data-lucide="check-circle-2"></i>Automatisation No-Code / Low-Code</li>
+          <li><i data-lucide="check-circle-2"></i>Synchronisation d'équipe</li>
+          <li><i data-lucide="check-circle-2"></i>Légèreté et vitesse d'accès</li>
+        </ul>
+        <div class="more">Parler à un ingénieur <i data-lucide="arrow-right" style="width:14px"></i></div>
       </div>
+      <!-- CARTE 4 : AUTRE PROJET -->
       <div class="card w2 rv" style="background:var(--ink);color:#fff;border:0" onclick="openProjectModal('Autre besoin technique')">
         <div class="ic" style="background:rgba(255,255,255,.12);color:#fff"><i data-lucide="sparkles"></i></div>
-        <h4 style="color:#fff">Autre idée ?</h4><p style="color:rgba(255,255,255,.7)">Décrivez-la en deux lignes, on revient vers vous.</p>
-        <div class="more" style="color:var(--amber);margin-top:auto">Nous écrire <i data-lucide="arrow-right" style="width:15px"></i></div>
+        <h4 style="color:#fff">Autre idée ?</h4>
+        <p style="color:rgba(255,255,255,.7)">Décrivez-la en deux lignes, nous concevons le prototype.</p>
+        <div class="more" style="color:var(--amber);margin-top:auto">Nous écrire <i data-lucide="arrow-right" style="width:14px"></i></div>
       </div>
     </div>
-    <div class="center rv" style="margin:110px auto 0"><span class="tag">Technologies</span><h3 class="t" style="font-size:clamp(26px,3.4vw,38px)">Notre pile technologique</h3><p class="lead">Des architectures modernes pour vous assurer vitesse, sécurité et évolutivité.</p></div>
+
+    <!-- TECH STACK -->
+    <div class="center rv" style="margin:90px auto 0">
+      <span class="tag">Technologies</span>
+      <h3 class="t" style="font-size:clamp(24px,3.4vw,36px)">Notre pile technologique</h3>
+      <p class="lead">Des architectures modernes pour vous assurer vitesse, sécurité et évolutivité.</p>
+    </div>
     <div class="tech rv">
-      <div><i data-lucide="globe"></i>HTML5 / CSS3</div><div><i data-lucide="zap"></i>Javascript</div><div><i data-lucide="smartphone"></i>PWA</div><div><i data-lucide="flame"></i>Firebase</div><div><i data-lucide="server"></i>Node.js</div><div><i data-lucide="cloud"></i>Firestore</div>
+      <div><i data-lucide="globe"></i>HTML5 / CSS3</div>
+      <div><i data-lucide="zap"></i>JavaScript</div>
+      <div><i data-lucide="smartphone"></i>PWA</div>
+      <div><i data-lucide="flame"></i>Firebase</div>
+      <div><i data-lucide="server"></i>Node.js</div>
+      <div><i data-lucide="cloud"></i>Firestore</div>
     </div>
   </div>
 </section>
 
+<!-- À PROPOS -->
 <section id="apropos">
   <div class="wrap">
     <div class="g2">
@@ -278,7 +427,9 @@ footer .logo-i{width:52px;height:52px;font-size:26px;margin:0 auto 16px;border-r
         <h2 class="t" id="sl-about-title">Des bâtisseurs du monde de demain</h2>
         <div class="lead" id="sl-about-text">Simplix Tech Group réunit un collectif d'ingénieurs, de designers et de stratèges engagés. Nous croyons que la transformation numérique doit se faire en tenant compte des spécificités locales et des dynamiques humaines.<br><br>De la conception de Progressive Web Apps légères à l'architecture de systèmes cloud résilients, nous œuvrons pour un écosystème numérique inclusif. Notre méthode est collaborative : nous co-construisons nos outils sur le terrain avec leurs futurs utilisateurs.</div>
       </div>
-      <div class="photo rv"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80" alt="Ingénieurs de Simplix en collaboration" /></div>
+      <div class="photo rv">
+        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80" alt="Ingénieurs de Simplix en collaboration" />
+      </div>
     </div>
     <div class="trio">
       <div class="card rv"><div class="ic"><i data-lucide="eye"></i></div><h4>Notre vision</h4><p>Devenir le pont technologique de référence pour l'inclusion digitale, en prouvant que l'ingénierie logicielle de pointe peut naître localement.</p></div>
@@ -288,213 +439,453 @@ footer .logo-i{width:52px;height:52px;font-size:26px;margin:0 auto 16px;border-r
   </div>
 </section>
 
+<!-- RÉALISATIONS -->
 <section id="realisations" style="background:var(--paper)">
   <div class="wrap">
-    <div class="center rv"><span class="tag">Portefeuille</span><h2 class="t">Ce que nous avons construit.</h2><p class="lead">Des produits durables, légers et performants, nés d'analyses rigoureuses sur le terrain.</p></div>
-    <div class="work rv"><div class="pic"><img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&w=900&q=80" alt="Application Shamar" /></div>
-      <div class="inf"><span class="chip">Impact social &amp; communautaire</span><h3>Shamar — Gestion pastorale complète</h3>
-        <p>Application PWA de référence pour la gestion des églises : annuaire intelligent, suivi automatisé de présence, tableau de bord d'assiduité, demandes spirituelles confidentielles et passerelle d'offrandes sécurisée.</p>
+    <div class="center rv">
+      <span class="tag">Portefeuille</span>
+      <h2 class="t">Ce que nous avons construit.</h2>
+      <p class="lead">Des produits durables, légers et performants, nés d'analyses rigoureuses sur le terrain.</p>
+    </div>
+    
+    <!-- Shamar -->
+    <div class="work rv">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&w=900&q=80" alt="Application Shamar" /></div>
+      <div class="inf">
+        <span class="chip">Impact social &amp; communautaire</span>
+        <h3>Shamar — Gestion pastorale complète</h3>
+        <p>Application PWA de référence pour la gestion des églises : annuaire intelligent, suivi automatisé de présence, tableau de bord d'assiduité, demandes confidentielles et passerelle de dons sécurisée.</p>
         <div class="met"><div><small>Assiduité d'équipe</small><b>+35%</b></div><div><small>Accessibilité</small><b>Hors-ligne</b></div></div>
-        <div class="tags"><span>PWA</span><span>FCM Push</span><span>Offline-First</span></div></div></div>
-    <div class="work rv"><div class="pic"><img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=900&q=80" alt="Simplix Resto" /></div>
-      <div class="inf"><span class="chip">Productivité &amp; restauration</span><h3>Simplix Resto — Suivi d'encaissement</h3>
+        <div class="tags"><span>PWA</span><span>FCM Push</span><span>Offline-First</span></div>
+      </div>
+    </div>
+
+    <!-- Simplix Resto -->
+    <div class="work rv">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=900&q=80" alt="Simplix Resto" /></div>
+      <div class="inf">
+        <span class="chip">Productivité &amp; restauration</span>
+        <h3>Simplix Resto — Suivi d'encaissement</h3>
         <p>Système d'encaissement et de gestion de stocks léger pour les restaurateurs : commandes synchronisées en cuisine, suivi des stocks, et bilan comptable analytique en temps réel.</p>
         <div class="met"><div><small>Rotation des tables</small><b>+20%</b></div><div><small>Contrôle des stocks</small><b>0 perte</b></div></div>
-        <div class="tags"><span>Realtime Database</span><span>Multi-Device</span><span>POS</span></div></div></div>
-    <div class="work rv"><div class="pic"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Simplix Immo" /></div>
-      <div class="inf"><span class="chip">PropTech / gestion immobilière</span><h3>Simplix Immo — Suivi locatif automatisé</h3>
+        <div class="tags"><span>Realtime Database</span><span>Multi-Device</span><span>POS</span></div>
+      </div>
+    </div>
+
+    <!-- Simplix Immo -->
+    <div class="work rv">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Simplix Immo" /></div>
+      <div class="inf">
+        <span class="chip">PropTech / gestion immobilière</span>
+        <h3>Simplix Immo — Suivi locatif automatisé</h3>
         <p>Plateforme pour propriétaires indépendants : automatisation des avis d'échéance par SMS/WhatsApp, suivi de paiement des loyers, et gestion des requêtes de maintenance.</p>
         <div class="met"><div><small>Recouvrement</small><b>98%</b></div><div><small>Automatisation</small><b>Rapports PDF</b></div></div>
-        <div class="tags"><span>WhatsApp API</span><span>Relance SMS</span><span>PDF Engines</span></div></div></div>
-    <div class="cta rv"><div style="position:relative"><span class="tag">Co-conception</span><h3>Vous avez une idée de projet ?</h3><p>Notre lab étudie constamment de nouveaux cas d'usage industriels et sociaux. Co-concevons ensemble une application adaptée à vos besoins.</p>
-      <button onclick="openProjectModal('Application Web / Mobile')" class="btn" style="background:#fff;color:var(--blue)">Prendre rendez-vous <i data-lucide="arrow-right" style="width:16px"></i></button></div></div>
+        <div class="tags"><span>WhatsApp API</span><span>Relance SMS</span><span>PDF Engines</span></div>
+      </div>
+    </div>
+
+    <div class="cta rv">
+      <div style="position:relative">
+        <span class="tag">Co-conception</span>
+        <h3>Vous avez une idée de projet ?</h3>
+        <p>Notre lab étudie constamment de nouveaux cas d'usage industriels et sociaux. Co-concevons ensemble une application adaptée à vos besoins.</p>
+        <button onclick="openProjectModal('Application Web / Mobile')" class="btn" style="background:#fff;color:var(--blue)">Prendre rendez-vous <i data-lucide="arrow-right" style="width:15px"></i></button>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="g2c">
-      <div class="rv"><span class="tag">Démarrer un projet</span><h2 class="t">Co-construisons votre solution numérique.</h2><p class="lead">Notre équipe est à votre écoute pour modéliser une architecture, dessiner un prototype et déployer une solution logicielle durable.</p></div>
+      <div class="rv">
+        <span class="tag">Démarrer un projet</span>
+        <h2 class="t">Co-construisons votre solution numérique.</h2>
+        <p class="lead">Notre équipe est à votre écoute pour modéliser une architecture, dessiner un prototype et déployer une solution logicielle durable.</p>
+      </div>
       <div class="cbox rv" id="sl-contact-card">
-        <a id="sl-contact-email" href="mailto:simplictechgroup@gmail.com" class="citem"><div class="cic" style="background:rgba(245,158,11,.15);color:var(--amber2)"><i data-lucide="mail"></i></div><div><small>Email direct</small><strong id="sl-email-val">simplictechgroup@gmail.com</strong></div></a>
-        <a id="sl-contact-whatsapp" href="https://wa.me/2290128821818" target="_blank" class="citem"><div class="cic" style="background:rgba(37,211,102,.15);color:#16a34a"><i data-lucide="message-square"></i></div><div><small>WhatsApp pro</small><strong id="sl-whatsapp-val">+229 01 28 82 18 18</strong></div></a>
-        <a id="sl-contact-website" href="#" target="_blank" class="citem" style="display:none"><div class="cic" style="background:rgba(29,78,216,.1);color:var(--blue)"><i data-lucide="globe"></i></div><div><small>Plateforme web</small><strong id="sl-website-val">—</strong></div></a>
+        <a id="sl-contact-email" href="mailto:simplictechgroup@gmail.com" class="citem">
+          <div class="cic" style="background:rgba(245,158,11,.15);color:var(--amber2)"><i data-lucide="mail"></i></div>
+          <div><small>Email direct</small><strong id="sl-email-val">simplictechgroup@gmail.com</strong></div>
+        </a>
+        <a id="sl-contact-whatsapp" href="https://wa.me/2290128821818" target="_blank" class="citem">
+          <div class="cic" style="background:rgba(37,211,102,.15);color:#16a34a"><i data-lucide="message-square"></i></div>
+          <div><small>WhatsApp pro</small><strong id="sl-whatsapp-val">+229 01 28 82 18 18</strong></div>
+        </a>
+        <a id="sl-contact-website" href="#" target="_blank" class="citem" style="display:none">
+          <div class="cic" style="background:rgba(29,78,216,.1);color:var(--blue)"><i data-lucide="globe"></i></div>
+          <div><small>Plateforme web</small><strong id="sl-website-val">—</strong></div>
+        </a>
       </div>
     </div>
-    <div style="margin-top:120px">
-      <div class="center rv"><span class="tag">FAQ</span><h3 class="t" style="font-size:clamp(30px,4vw,46px)">Des réponses claires à vos questions.</h3></div>
+
+    <!-- FAQ -->
+    <div style="margin-top:100px">
+      <div class="center rv">
+        <span class="tag">FAQ</span>
+        <h3 class="t" style="font-size:clamp(26px,3.8vw,42px)">Des réponses claires à vos questions.</h3>
+      </div>
       <div class="faq">
-        <div class="fq rv"><button onclick="toggleFaq(this)"><span>Combien de temps prend la conception d'un produit ?</span><i data-lucide="chevron-down" style="width:20px"></i></button><div class="fa"><div>La durée dépend de l'étendue des processus à informatiser. Un prototype fonctionnel ou une PWA de complexité moyenne demande généralement entre 4 et 8 semaines, de la co-conception initiale au déploiement en production.</div></div></div>
-        <div class="fq rv"><button onclick="toggleFaq(this)"><span>Vos applications fonctionnent-elles sans connexion Internet ?</span><i data-lucide="chevron-down" style="width:20px"></i></button><div class="fa"><div>Oui, l'accessibilité hors-ligne fait partie de nos priorités. Nous utilisons des technologies Offline-First. Les données saisies sans réseau se synchronisent automatiquement dès qu'une connexion est détectée.</div></div></div>
-        <div class="fq rv"><button onclick="toggleFaq(this)"><span>Assurez-vous la maintenance après la mise en ligne ?</span><i data-lucide="chevron-down" style="width:20px"></i></button><div class="fa"><div>Oui. Nous proposons des contrats d'accompagnement et de maintenance technique réactifs, incluant des cycles d'amélioration basés sur les retours d'utilisation de vos équipes terrain.</div></div></div>
+        <div class="fq rv">
+          <button onclick="toggleFaq(this)"><span>Combien de temps prend la conception d'un produit ?</span><i data-lucide="chevron-down" style="width:18px"></i></button>
+          <div class="fa"><div>La durée dépend de l'étendue des processus à informatiser. Un prototype fonctionnel ou une PWA de complexité moyenne demande généralement entre 4 et 8 semaines, de la co-conception initiale au déploiement en production.</div></div>
+        </div>
+        <div class="fq rv">
+          <button onclick="toggleFaq(this)"><span>Vos applications fonctionnent-elles sans connexion Internet ?</span><i data-lucide="chevron-down" style="width:18px"></i></button>
+          <div class="fa"><div>Oui, l'accessibilité hors-ligne fait partie de nos priorités. Nous utilisons des technologies Offline-First. Les données saisies sans réseau se synchronisent automatiquement dès qu'une connexion est détectée.</div></div>
+        </div>
+        <div class="fq rv">
+          <button onclick="toggleFaq(this)"><span>Assurez-vous la maintenance après la mise en ligne ?</span><i data-lucide="chevron-down" style="width:18px"></i></button>
+          <div class="fa"><div>Oui. Nous proposons des contrats d'accompagnement et de maintenance technique réactifs, incluant des cycles d'amélioration basés sur les retours d'utilisation de vos équipes terrain.</div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="big" aria-hidden="true">Simplix</div>
     <div class="logo-i">S</div>
-    <p style="font:800 20px var(--fd);margin-bottom:8px">Simplix Tech Group</p>
-    <p id="sl-footer-text" style="font-size:13px;color:var(--blue);font-weight:700;margin-bottom:24px">Innovation · Digital · Impact</p>
-    <p style="font-size:13px;color:var(--mute)">© 2026 Simplix Tech Group — Tous droits réservés</p>
+    <p style="font:800 19px var(--fd);margin-bottom:6px">Simplix Tech Group</p>
+    <p id="sl-footer-text" style="font-size:12.5px;color:var(--blue);font-weight:700;margin-bottom:20px">Innovation · Digital · Impact</p>
+    <p style="font-size:12px;color:var(--mute)">© 2026 Simplix Tech Group — Tous droits réservés</p>
   </div>
 </footer>
 
+<!-- MODAL ADMIN (FIREBASE) -->
 <div id="sl-admin-modal" class="ovl"><div class="mbox" style="max-width:600px">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px"><h4 style="font:800 22px var(--fd)">Éditer le site</h4><button onclick="fermerPanneauAdmin()" style="background:none;border:0;font-size:24px;cursor:pointer;color:var(--mute)">✕</button></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+    <h4 style="font:800 20px var(--fd)">Éditer le site</h4>
+    <button onclick="fermerPanneauAdmin()" style="background:none;border:0;font-size:22px;cursor:pointer;color:var(--mute)">✕</button>
+  </div>
   <div id="sl-admin-fields"></div>
   <button class="btn btn-ink" onclick="sauvegarderAdmin()" style="width:100%;justify-content:center;margin-top:12px">Enregistrer les modifications</button>
 </div></div>
 
-<div class="banner"><div id="rotating-banner"></div></div>
+<!-- ================= BANNIÈRE ROTATIVE MOBILE-OPTIMISÉE ================= -->
+<div class="banner">
+  <div id="rotating-banner"></div>
+</div>
 
+<!-- ================= MODAL PROJET SUR-MESURE ================= -->
 <div id="project-modal" class="ovl"><div class="mbox">
   <button class="x" onclick="closeProjectModal()" aria-label="Fermer"><i data-lucide="x" style="width:16px"></i></button>
-  <div style="text-align:center;margin-bottom:26px">
-    <div class="ic" style="margin:0 auto 14px;border-radius:50%"><i data-lucide="rocket"></i></div>
-    <h3 style="font:800 28px/1.1 var(--fd);letter-spacing:-1px">Parlez-nous de votre projet</h3>
-    <p style="font-size:14px;color:var(--mute);margin-top:10px">Remplissez ce formulaire rapide. Un ingénieur vous recontactera sur WhatsApp pour discuter de la faisabilité et de la maquette.</p>
+  <div style="text-align:center;margin-bottom:22px">
+    <div class="ic" style="margin:0 auto 12px;border-radius:50%"><i data-lucide="rocket"></i></div>
+    <h3 style="font:800 24px/1.1 var(--fd);letter-spacing:-.6px">Parlez-nous de votre projet</h3>
+    <p style="font-size:13.5px;color:var(--mute);margin-top:8px">Remplissez ce formulaire rapide. Un ingénieur vous recontactera sur WhatsApp pour discuter de la faisabilité et de la maquette.</p>
   </div>
   <form id="project-form" onsubmit="handleProjectSubmit(event)">
-    <div class="fld"><label>Nom complet *</label><input class="inp" type="text" id="proj-name" required></div>
-    <div class="fld"><label>Numéro WhatsApp *</label><input class="inp" type="tel" id="proj-phone" required></div>
-    <div class="fld"><label>Type de besoin *</label><select class="inp" id="proj-type"><option value="Site d'Entreprise / ONG">Site d'Entreprise / ONG</option><option value="Application Web / Mobile">Application Web / Mobile</option><option value="Autre besoin technique">Autre besoin technique</option></select></div>
+    <div class="fld"><label>Nom complet *</label><input class="inp" type="text" id="proj-name" required placeholder="Ex: Jean DOSSOU"></div>
+    <div class="fld"><label>Numéro WhatsApp *</label><input class="inp" type="tel" id="proj-phone" required placeholder="Ex: +229 01 00 00 00 00"></div>
+    <div class="fld"><label>Type de besoin *</label>
+      <select class="inp" id="proj-type">
+        <option value="Site d'Entreprise / ONG">Site d'Entreprise / ONG</option>
+        <option value="Application Web / Mobile">Application Web / Mobile</option>
+        <option value="Autre besoin technique">Autre besoin technique</option>
+      </select>
+    </div>
     <div class="fld"><label>Brève description du projet</label><textarea class="inp" id="proj-desc" rows="3" placeholder="Ex: Je veux digitaliser la gestion de mon stock..."></textarea></div>
-    <button type="submit" id="proj-btn" class="btn btn-ink" style="width:100%;justify-content:center"><span>Envoyer ma demande sur WhatsApp</span><i data-lucide="send" style="width:16px"></i></button>
+    <button type="submit" id="proj-btn" class="btn btn-ink" style="width:100%;justify-content:center">
+      <span>Envoyer ma demande sur WhatsApp</span><i data-lucide="send" style="width:15px"></i>
+    </button>
   </form>
 </div></div>
 
+<!-- SCRIPTS SDK FIREBASE -->
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
 <script>
+// 1. CONFIGURATION FIREBASE
 firebase.initializeApp({
-  apiKey:"AIzaSyB6zCZ3nDsKPqSlSLGThb1ToD5c0W4TCOU",authDomain:"shamar-eglise-mrrp.firebaseapp.com",projectId:"shamar-eglise-mrrp",
-  storageBucket:"shamar-eglise-mrrp.firebasestorage.app",messagingSenderId:"353688801843",appId:"1:353688801843:web:c7f9e3c0eda44fe576c946"
+  apiKey:"AIzaSyB6zCZ3nDsKPqSlSLGThb1ToD5c0W4TCOU",
+  authDomain:"shamar-eglise-mrrp.firebaseapp.com",
+  projectId:"shamar-eglise-mrrp",
+  storageBucket:"shamar-eglise-mrrp.firebasestorage.app",
+  messagingSenderId:"353688801843",
+  appId:"1:353688801843:web:c7f9e3c0eda44fe576c946"
 });
 const slDb=firebase.firestore();
+
+// DEFAULTS CORRIGÉS (PLUS AUCUNE INCOHÉRENCE SUR LE SITE PRO 29.900 F)
 const SL_DEFAULTS={
   heroSubtitle:"Simplix Tech Group conçoit des technologies adaptées aux réalités des communautés, des PME et des organisations modernes en Afrique et à l'international.",
   aboutTitle:"Des bâtisseurs du monde de demain",
   aboutText:"Simplix Tech Group réunit un collectif d'ingénieurs, de designers et de stratèges engagés. Nous croyons que la transformation numérique doit se faire en tenant compte des spécificités locales et des dynamiques humaines.\n\nDe la conception de Progressive Web Apps légères à l'architecture de systèmes cloud résilients, nous œuvrons pour un écosystème numérique inclusif. Notre méthode est collaborative : nous co-construisons nos outils sur le terrain avec leurs futurs utilisateurs.",
-  dom1Title:"Impact Social",
-  dom1Text:"Des outils digitaux adaptés aux réalités des communautés locales, associations, églises et organisations à but non lucratif. Nos interfaces intuitives fonctionnent de manière transparente, même dans les environnements à faible connectivité.",
+  dom1Title:"Sites d'Autorité (Pro)",
+  dom1Text:"Portfolios premium pour consultants, formateurs et experts. Indexation Google, design parfait et domaine .com offert.",
   dom2Title:"Entreprises & PME",
-  dom2Text:"Modernisation et digitalisation des flux de travail, suivi des activités en temps réel, simplification comptable et outils sur mesure pensés pour accélérer la croissance de vos équipes au quotidien.",
-  dom3Title:"Quotidien & Productivité",
-  dom3Text:"Applications de gestion de tâches et plateformes intelligentes d'automatisation conçues pour libérer du temps de travail, fluidifier les échanges et sécuriser vos données prioritaires.",
-  email:"simplictechgroup@gmail.com",whatsapp:"+229 01 28 82 18 18",whatsappLink:"2290128821818",website:"",social:"",footerText:"Innovation · Digital · Impact"
+  dom2Text:"Vitrines institutionnelles sur-mesure pour entreprises et ONG. Présentation de services, intégration de devis et SEO avancé.",
+  dom3Title:"Applications (PWA)",
+  dom3Text:"Développement d'applications web et mobiles (SaaS, gestion interne, e-commerce) avec fonctionnement hors-ligne (Offline-First).",
+  email:"simplictechgroup@gmail.com",
+  whatsapp:"+229 01 28 82 18 18",
+  whatsappLink:"2290128821818",
+  website:"",
+  social:"",
+  footerText:"Innovation · Digital · Impact"
 };
-let slData={...SL_DEFAULTS};let isAdmin=false;
+
+let slData={...SL_DEFAULTS};
+let isAdmin=false;
 if(sessionStorage.getItem('sl_admin')==='ok')isAdmin=true;
 
-/* scroll : header + barre de progression */
+// 2. SCROLL : HEADER & PROGRESS BAR
 window.addEventListener('scroll',()=>{
-  const h=document.getElementById('sl-header');if(h)h.classList.toggle('scrolled',scrollY>40);
-  const m=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(m>0?scrollY/m*100:0)+'%';
+  const h=document.getElementById('sl-header');
+  if(h)h.classList.toggle('scrolled',scrollY>30);
+  const m=document.documentElement.scrollHeight-innerHeight;
+  document.getElementById('progress').style.width=(m>0?scrollY/m*100:0)+'%';
 },{passive:true});
-function scrollToContact(){const el=document.getElementById('contact');if(el)el.scrollIntoView({behavior:'smooth'})}
-function toggleFaq(b){const p=b.parentElement,o=p.classList.contains('open');document.querySelectorAll('.fq').forEach(i=>i.classList.remove('open'));if(!o)p.classList.add('open')}
 
-function chargerDonnees(){
-  slDb.collection('shamarlab').doc('config').get().then(d=>{if(d.exists)slData={...SL_DEFAULTS,...d.data()};appliquerDonnees();masquerLoader()}).catch(()=>{appliquerDonnees();masquerLoader()});
-  slDb.collection('shamarlab').doc('config').onSnapshot(d=>{if(d.exists){slData={...SL_DEFAULTS,...d.data()};appliquerDonnees()}});
+function scrollToContact(){
+  const el=document.getElementById('contact');
+  if(el)el.scrollIntoView({behavior:'smooth'});
 }
+
+function toggleFaq(b){
+  const p=b.parentElement,o=p.classList.contains('open');
+  document.querySelectorAll('.fq').forEach(i=>i.classList.remove('open'));
+  if(!o)p.classList.add('open');
+}
+
+// 3. CHARGEMENT FIREBASE
+function chargerDonnees(){
+  slDb.collection('shamarlab').doc('config').get().then(d=>{
+    if(d.exists)slData={...SL_DEFAULTS,...d.data()};
+    appliquerDonnees();
+    masquerLoader();
+  }).catch(()=>{
+    appliquerDonnees();
+    masquerLoader();
+  });
+  slDb.collection('shamarlab').doc('config').onSnapshot(d=>{
+    if(d.exists){slData={...SL_DEFAULTS,...d.data()};appliquerDonnees()}
+  });
+}
+
 function appliquerDonnees(){
-  setText('sl-hero-subtitle',slData.heroSubtitle);setText('sl-about-title',slData.aboutTitle);setTextMultiline('sl-about-text',slData.aboutText);
-  ['1','2','3'].forEach(n=>{setText('sl-dom'+n+'-title',slData['dom'+n+'Title']);setText('sl-dom'+n+'-text',slData['dom'+n+'Text'])});
-  setText('sl-footer-text',slData.footerText);setText('sl-email-val',slData.email);
-  const e=document.getElementById('sl-contact-email');if(e)e.href='mailto:'+slData.email;
+  setText('sl-hero-subtitle',slData.heroSubtitle);
+  setText('sl-about-title',slData.aboutTitle);
+  setTextMultiline('sl-about-text',slData.aboutText);
+  ['1','2','3'].forEach(n=>{
+    setText('sl-dom'+n+'-title',slData['dom'+n+'Title']);
+    setText('sl-dom'+n+'-text',slData['dom'+n+'Text']);
+  });
+  setText('sl-footer-text',slData.footerText);
+  setText('sl-email-val',slData.email);
+  const e=document.getElementById('sl-contact-email');
+  if(e)e.href='mailto:'+slData.email;
   setText('sl-whatsapp-val',slData.whatsapp);
-  const w=document.getElementById('sl-contact-whatsapp');if(w)w.href='https://wa.me/'+(slData.whatsappLink||slData.whatsapp.replace(/\D/g,''));
+  const w=document.getElementById('sl-contact-whatsapp');
+  if(w)w.href='https://wa.me/'+(slData.whatsappLink||slData.whatsapp.replace(/\D/g,''));
   const s=document.getElementById('sl-contact-website');
-  if(s){if(slData.website){s.style.display='flex';s.href=slData.website;setText('sl-website-val',slData.website)}else s.style.display='none'}
-  if(isAdmin){const b=document.getElementById('sl-admin-bar');if(b)b.style.display='flex';const h=document.getElementById('sl-header');if(h)h.style.top='54px'}
+  if(s){
+    if(slData.website){s.style.display='flex';s.href=slData.website;setText('sl-website-val',slData.website)}
+    else s.style.display='none';
+  }
+  if(isAdmin){
+    const b=document.getElementById('sl-admin-bar');
+    if(b)b.style.display='flex';
+    const h=document.getElementById('sl-header');
+    if(h)h.style.top='50px';
+  }
   if(typeof lucide!=='undefined')lucide.createIcons();
 }
-function setText(id,v){const el=document.getElementById(id);if(el)el.textContent=v||''}
-function setTextMultiline(id,v){const el=document.getElementById(id);if(!el||!v)return;el.innerHTML=v.split('\n\n').map(p=>'<p style="margin-bottom:16px">'+p.replace(/\n/g,'<br>')+'</p>').join('')}
-function masquerLoader(){const l=document.getElementById('sl-loader');if(!l)return;l.style.opacity='0';l.style.visibility='hidden';setTimeout(()=>{l.style.display='none'},600)}
 
+function setText(id,v){const el=document.getElementById(id);if(el)el.textContent=v||''}
+function setTextMultiline(id,v){
+  const el=document.getElementById(id);if(!el||!v)return;
+  el.innerHTML=v.split('\n\n').map(p=>'<p style="margin-bottom:14px">'+p.replace(/\n/g,'<br>')+'</p>').join('');
+}
+function masquerLoader(){
+  const l=document.getElementById('sl-loader');
+  if(!l)return;
+  l.style.opacity='0';l.style.visibility='hidden';
+  setTimeout(()=>{l.style.display='none'},600);
+}
+
+// 4. PANNEAU ADMIN
 function ouvrirPanneauAdmin(){
-  const m=document.getElementById('sl-admin-modal'),f=document.getElementById('sl-admin-fields');if(!m||!f)return;
-  const c=[['heroSubtitle','Sous-titre hero','textarea'],['aboutTitle','Titre "Qui sommes-nous"','text'],['aboutText','Texte "Qui sommes-nous"','textarea'],
-  ['dom1Title','Domaine 1 — Titre','text'],['dom1Text','Domaine 1 — Texte','textarea'],['dom2Title','Domaine 2 — Titre','text'],['dom2Text','Domaine 2 — Texte','textarea'],
-  ['dom3Title','Domaine 3 — Titre','text'],['dom3Text','Domaine 3 — Texte','textarea'],['email','Email de contact','text'],['whatsapp','WhatsApp (affiché)','text'],
-  ['whatsappLink','WhatsApp (lien, ex: 22900000000)','text'],['website','Site web (laisser vide si aucun)','text'],['footerText','Texte du footer','text']];
-  f.innerHTML=c.map(([id,l,t])=>`<div class="fld"><label>${l}</label>${t==='textarea'?`<textarea id="adm-${id}" class="inp" rows="4">${slData[id]||''}</textarea>`:`<input type="text" id="adm-${id}" class="inp" value="${(slData[id]||'').replace(/"/g,'&quot;')}">`}</div>`).join('');
+  const m=document.getElementById('sl-admin-modal'),f=document.getElementById('sl-admin-fields');
+  if(!m||!f)return;
+  const c=[
+    ['heroSubtitle','Sous-titre hero','textarea'],['aboutTitle','Titre "Qui sommes-nous"','text'],
+    ['aboutText','Texte "Qui sommes-nous"','textarea'],['dom1Title','Domaine 1 — Titre','text'],
+    ['dom1Text','Domaine 1 — Texte','textarea'],['dom2Title','Domaine 2 — Titre','text'],
+    ['dom2Text','Domaine 2 — Texte','textarea'],['dom3Title','Domaine 3 — Titre','text'],
+    ['dom3Text','Domaine 3 — Texte','textarea'],['email','Email de contact','text'],
+    ['whatsapp','WhatsApp (affiché)','text'],['whatsappLink','WhatsApp (lien, ex: 22900000000)','text'],
+    ['website','Site web (laisser vide si aucun)','text'],['footerText','Texte du footer','text']
+  ];
+  f.innerHTML=c.map(([id,l,t])=>`<div class="fld"><label>${l}</label>${t==='textarea'?`<textarea id="adm-${id}" class="inp" rows="3">${slData[id]||''}</textarea>`:`<input type="text" id="adm-${id}" class="inp" value="${(slData[id]||'').replace(/"/g,'&quot;')}">`}</div>`).join('');
   m.style.display='block';
 }
-function fermerPanneauAdmin(){const m=document.getElementById('sl-admin-modal');if(m)m.style.display='none'}
+function fermerPanneauAdmin(){
+  const m=document.getElementById('sl-admin-modal');
+  if(m)m.style.display='none';
+}
 function sauvegarderAdmin(){
-  ['heroSubtitle','aboutTitle','aboutText','dom1Title','dom1Text','dom2Title','dom2Text','dom3Title','dom3Text','email','whatsapp','whatsappLink','website','footerText'].forEach(id=>{const el=document.getElementById('adm-'+id);if(el)slData[id]=el.value.trim()});
-  slDb.collection('shamarlab').doc('config').set(slData,{merge:true}).then(()=>{fermerPanneauAdmin();alert('Modifications enregistrées avec succès !')}).catch(e=>alert('Erreur : '+e.message));
+  ['heroSubtitle','aboutTitle','aboutText','dom1Title','dom1Text','dom2Title','dom2Text','dom3Title','dom3Text','email','whatsapp','whatsappLink','website','footerText'].forEach(id=>{
+    const el=document.getElementById('adm-'+id);
+    if(el)slData[id]=el.value.trim();
+  });
+  slDb.collection('shamarlab').doc('config').set(slData,{merge:true})
+    .then(()=>{fermerPanneauAdmin();alert('Modifications enregistrées avec succès !')})
+    .catch(e=>alert('Erreur : '+e.message));
 }
 
-/* machine à écrire */
+// 5. EFFET MACHINE À ÉCRIRE
 (function(){
-  const ph=["votre impact.","votre croissance.","votre gestion.","l'inclusion digitale."];let pi=0,ci=0,del=false,el=null;
+  const ph=["votre impact.","votre croissance.","votre gestion.","l'inclusion digitale."];
+  let pi=0,ci=0,del=false,el=null;
   function type(){
     if(!el)el=document.getElementById("dynamic-text");if(!el)return;
     const cur=ph[pi];el.textContent=cur.substring(0,del?--ci:++ci);
-    let d=del?50:100;
-    if(!del&&ci===cur.length){d=2000;del=true}else if(del&&ci===0){del=false;pi=(pi+1)%ph.length;d=500}
+    let d=del?45:90;
+    if(!del&&ci===cur.length){d=2000;del=true}
+    else if(del&&ci===0){del=false;pi=(pi+1)%ph.length;d=500}
     setTimeout(type,d);
   }
   document.addEventListener('DOMContentLoaded',()=>{chargerDonnees();setTimeout(type,1000);initFx()});
 })();
 
-/* effets : marquee, reveal, compteurs, halo des cartes */
+// 6. MICRO-INTERACTIONS (MARQUEE, REVEAL, COMPTEURS)
 function initFx(){
   const stack=[['globe','HTML5 / CSS3'],['zap','JavaScript'],['smartphone','PWA'],['flame','Firebase'],['server','Node.js'],['cloud','Firestore'],['wifi-off','Offline-First'],['message-circle','WhatsApp API']];
   const row=stack.map(([i,n])=>`<span><i data-lucide="${i}"></i>${n}</span>`).join('');
   document.getElementById('mq').innerHTML=row+row+row+row;
   if(typeof lucide!=='undefined')lucide.createIcons();
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
-    e.target.querySelectorAll&&e.target.querySelectorAll('[data-n]').forEach(count);if(e.target.dataset&&e.target.dataset.n)count(e.target)}}),{threshold:.15});
-  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+  
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+      e.target.querySelectorAll&&e.target.querySelectorAll('[data-n]').forEach(count);
+      if(e.target.dataset&&e.target.dataset.n)count(e.target);
+    }
+  }),{threshold:.12});
+
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
   document.querySelectorAll('.stat b').forEach(b=>io.observe(b));
-  document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--x',(e.clientX-r.left)+'px');c.style.setProperty('--y',(e.clientY-r.top)+'px')}));
+  document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--x',(e.clientX-r.left)+'px');
+    c.style.setProperty('--y',(e.clientY-r.top)+'px');
+  }));
 }
 function count(b){
-  if(b.dataset.done)return;b.dataset.done=1;const n=+b.dataset.n,s=b.dataset.s||'',t0=performance.now();
-  (function f(t){const p=Math.min((t-t0)/1500,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})(t0);
+  if(b.dataset.done)return;b.dataset.done=1;
+  const n=+b.dataset.n,s=b.dataset.s||'',t0=performance.now();
+  (function f(t){
+    const p=Math.min((t-t0)/1400,1);
+    b.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;
+    if(p<1)requestAnimationFrame(f);
+  })(t0);
 }
 
-/* bannière rotative */
+// 7. BANNIÈRE ROTATIVE RESPONSIVE
 const bannerData=[
-  {icon:'<i data-lucide="sparkles" style="width:20px;color:var(--amber2)"></i>',text:'<span style="font-size:13px;font-weight:700">🔥 Offre : Votre Site Pro à 29.900 F (.com offert)</span>',btn:'<span style="padding:9px 15px;border-radius:13px;background:linear-gradient(135deg,#FBBF24,#D97706);color:#0B1220;font-size:12px;font-weight:800">Voir l\'offre</span>',action:"window.location.href='offre.html'"},
-  {icon:'<i data-lucide="building-2" style="width:20px;color:var(--blue)"></i>',text:'<span style="font-size:13px;font-weight:700">🏢 PME : Demandez votre maquette Corporate</span>',btn:'<span style="padding:9px 15px;border-radius:13px;background:var(--blue);color:#fff;font-size:12px;font-weight:800">Devis gratuit</span>',action:"openProjectModal('Site d\\'Entreprise / ONG')"},
-  {icon:'<i data-lucide="smartphone" style="width:20px;color:#10B981"></i>',text:'<span style="font-size:13px;font-weight:700">📱 Créez votre Application Web/Mobile sur-mesure</span>',btn:'<span style="padding:9px 15px;border-radius:13px;background:#10B981;color:#fff;font-size:12px;font-weight:800">Nous parler</span>',action:"openProjectModal('Application Web / Mobile')"}
+  {
+    icon:'<i data-lucide="sparkles" style="width:18px;color:var(--amber2)"></i>',
+    text:'<div style="font-size:12px;font-weight:800;color:var(--ink);line-height:1.2">🔥 Site Pro : 29.900 F<span style="display:block;font-size:10px;color:var(--mute);font-weight:600">.com offert • 0F/an hébergement</span></div>',
+    btn:'<span style="padding:6px 12px;border-radius:10px;background:linear-gradient(135deg,#FBBF24,#D97706);color:#0B1220;font-size:11.5px;font-weight:800;white-space:nowrap">Voir l\'offre</span>',
+    action:"window.location.href='offre.html'"
+  },
+  {
+    icon:'<i data-lucide="building-2" style="width:18px;color:var(--blue)"></i>',
+    text:'<div style="font-size:12px;font-weight:800;color:var(--ink);line-height:1.2">🏢 PME & Entreprises<span style="display:block;font-size:10px;color:var(--mute);font-weight:600">Site vitrine & digitaliser vos flux</span></div>',
+    btn:'<span style="padding:6px 12px;border-radius:10px;background:var(--blue);color:#fff;font-size:11.5px;font-weight:800;white-space:nowrap">Devis gratuit</span>',
+    action:"openProjectModal('Site d\\'Entreprise / ONG')"
+  },
+  {
+    icon:'<i data-lucide="smartphone" style="width:18px;color:#10B981"></i>',
+    text:'<div style="font-size:12px;font-weight:800;color:var(--ink);line-height:1.2">📱 Applications (PWA)<span style="display:block;font-size:10px;color:var(--mute);font-weight:600">Fonctionne même hors-ligne</span></div>',
+    btn:'<span style="padding:6px 12px;border-radius:10px;background:#10B981;color:#fff;font-size:11.5px;font-weight:800;white-space:nowrap">Nous parler</span>',
+    action:"openProjectModal('Application Web / Mobile')"
+  }
 ];
-let currentBannerIndex=0;const bannerEl=document.getElementById('rotating-banner');
+
+let currentBannerIndex=0;
+const bannerEl=document.getElementById('rotating-banner');
+
 function updateBanner(){
-  const d=bannerData[currentBannerIndex];bannerEl.style.opacity='0';bannerEl.style.transform='translateY(10px)';
+  const d=bannerData[currentBannerIndex];
+  bannerEl.style.opacity='0';
+  bannerEl.style.transform='translateY(8px)';
+  
   setTimeout(()=>{
-    bannerEl.innerHTML=`<div style="display:flex;align-items:center;gap:12px;overflow:hidden"><div style="width:36px;height:36px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex-shrink:0">${d.icon}</div><div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${d.text}</div></div><div style="flex-shrink:0">${d.btn}</div>`;
-    bannerEl.setAttribute('onclick',d.action);bannerEl.style.opacity='1';bannerEl.style.transform='translateY(0)';
+    bannerEl.innerHTML=`
+      <div style="display:flex;align-items:center;gap:10px;overflow:hidden;min-width:0">
+        <div style="width:34px;height:34px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex-shrink:0">
+          ${d.icon}
+        </div>
+        <div style="min-width:0;overflow:hidden">${d.text}</div>
+      </div>
+      <div style="flex-shrink:0">${d.btn}</div>
+    `;
+    bannerEl.setAttribute('onclick',d.action);
+    bannerEl.style.opacity='1';
+    bannerEl.style.transform='translateY(0)';
     if(typeof lucide!=='undefined')lucide.createIcons();
-  },300);
+  },250);
+
   currentBannerIndex=(currentBannerIndex+1)%bannerData.length;
 }
-setTimeout(updateBanner,500);setInterval(updateBanner,10000);
+setTimeout(updateBanner,400);
+setInterval(updateBanner,10000);
 
-/* modal projet */
-function openProjectModal(t){const s=document.getElementById('proj-type');if(t)s.value=t;document.getElementById('project-modal').style.display='block';document.body.style.overflow='hidden'}
-function closeProjectModal(){document.getElementById('project-modal').style.display='none';document.body.style.overflow='auto'}
-document.getElementById('project-modal').addEventListener('click',e=>{if(e.target.id==='project-modal')closeProjectModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProjectModal()});
+// 8. GESTION DU MODAL PROJET
+function openProjectModal(t){
+  const s=document.getElementById('proj-type');
+  if(t)s.value=t;
+  document.getElementById('project-modal').style.display='block';
+  document.body.style.overflow='hidden';
+}
+function closeProjectModal(){
+  document.getElementById('project-modal').style.display='none';
+  document.body.style.overflow='auto';
+}
+document.getElementById('project-modal').addEventListener('click',e=>{
+  if(e.target.id==='project-modal')closeProjectModal();
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeProjectModal();
+});
 
+// 9. ENVOI DU PROJET VERS WHATSAPP + GMAIL
 function handleProjectSubmit(e){
   e.preventDefault();
-  const btn=document.getElementById('proj-btn'),name=document.getElementById('proj-name').value.trim(),phone=document.getElementById('proj-phone').value.trim(),
-  type=document.getElementById('proj-type').value,desc=document.getElementById('proj-desc').value.trim();
-  btn.disabled=true;btn.innerHTML='Traitement en cours...';
-  const wa=`*NOUVELLE DEMANDE DE PROJET (AGENCE)*%0A%0A👤 *Nom :* ${encodeURIComponent(name)}%0A📞 *WhatsApp :* ${encodeURIComponent(phone)}%0A🎯 *Type de besoin :* ${encodeURIComponent(type)}%0A📝 *Description :* ${encodeURIComponent(desc||'Non précisée')}%0A%0ABonjour l'équipe Simplix Tech ! Je souhaite discuter de ce projet avec un ingénieur et voir une maquette.`;
-  fetch("https://formsubmit.co/ajax/simplictechgroup@gmail.com",{method:"POST",headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({"Nom":name,"WhatsApp":phone,"Type de Projet":type,"Description":desc,"_subject":`🚀 NOUVEAU PROJET AGENCE : ${type}`,"_template":"table"}),keepalive:true}).catch(()=>console.log("Mail envoyé"));
-  setTimeout(()=>{window.location.href=`https://wa.me/2290128821818?text=${wa}`},400);
+  const btn=document.getElementById('proj-btn'),
+        name=document.getElementById('proj-name').value.trim(),
+        phone=document.getElementById('proj-phone').value.trim(),
+        type=document.getElementById('proj-type').value,
+        desc=document.getElementById('proj-desc').value.trim();
+
+  btn.disabled=true;
+  btn.innerHTML='Traitement...';
+
+  const wa=`*NOUVELLE DEMANDE DE PROJET (AGENCE)*%0A%0A`+
+           `👤 *Nom :* ${encodeURIComponent(name)}%0A`+
+           `📞 *WhatsApp :* ${encodeURIComponent(phone)}%0A`+
+           `🎯 *Type :* ${encodeURIComponent(type)}%0A`+
+           `📝 *Description :* ${encodeURIComponent(desc||'Non précisée')}%0A%0A`+
+           `Bonjour l'équipe Simplix Tech ! Je souhaite discuter de ce projet avec vous.`;
+
+  fetch("https://formsubmit.co/ajax/simplictechgroup@gmail.com",{
+    method:"POST",
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({"Nom":name,"WhatsApp":phone,"Type":type,"Description":desc,"_subject":`🚀 PROJET AGENCE : ${type}`}),
+    keepalive:true
+  }).catch(()=>console.log("Notifié"));
+
+  setTimeout(()=>{
+    window.location.href=`https://wa.me/2290128821818?text=${wa}`;
+  },350);
 }
 </script>
 </body>
