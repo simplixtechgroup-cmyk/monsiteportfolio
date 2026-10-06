@@ -135,33 +135,41 @@ nav{
 .links a{padding:8px 14px;border-radius:12px;font-size:13.5px;font-weight:600;color:var(--mut);transition:.2s}
 .links a:hover{background:var(--paper);color:var(--ink)}
 
-/* ================= HERO SECTION ET ORDONNANCEMENT PARFAIT ================= */
+/* ================= HERO SECTION & MOCKUP STUDIO ================= */
 .hero{
-  padding:44px 0 70px;
-  background:radial-gradient(900px 420px at 90% -10%,rgba(59,130,246,.14),transparent 70%),radial-gradient(700px 400px at 0 10%,rgba(245,158,11,.12),transparent 70%),#fff;
+  padding:44px 0 76px;
+  background:radial-gradient(900px 420px at 90% -10%,rgba(59,130,246,.12),transparent 70%),radial-gradient(700px 400px at 0 10%,rgba(245,158,11,.10),transparent 70%),#fff;
 }
 
-/* Sur Ordinateur : 2 colonnes équilibrées */
 @media(min-width:992px){
   .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+    grid-template-columns:1.05fr .95fr;
     grid-template-areas:
-      "intro visual"
-      "price visual";
-    gap:0 44px;
+      "intro mockup"
+      "price mockup";
+    gap:0 48px;
     align-items:start;
   }
   .hero-intro{grid-area:intro}
   .hero-price{grid-area:price}
-  .hero-visual{grid-area:visual}
+  .hero-mockup-wrap{grid-area:mockup}
+  
+  /* Boîte de prix rectangulaire et large sur PC */
+  .price-box {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 12px 24px;
+    align-items: center;
+  }
+  .price-box .btn-amber { grid-column: 1 / -1; margin-top: 8px; }
+  .price-box p { grid-column: 1 / -1; margin-bottom: 0; }
 }
 
-/* Sur Mobile : L'ORDRE PARFAIT (Titre -> PHOTO/GOOGLE -> Prix) */
 @media(max-width:991px){
   .hero-grid{display:flex;flex-direction:column}
   .hero-intro{order:1}
-  .hero-visual{order:2;margin:28px 0 24px}
+  .hero-mockup-wrap{order:2;margin:24px 0 26px; width: 100%;}
   .hero-price{order:3}
 }
 
@@ -176,59 +184,39 @@ nav{
   border-radius:99px;
   font-size:12px;
   font-weight:600;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 .pill b{background:var(--a);color:var(--ink);border-radius:99px;padding:2px 8px;font-size:10.5px}
-.hero h1{font-size:clamp(34px,5.5vw,60px);margin-bottom:18px}
+.hero h1{font-size:clamp(34px,5.2vw,58px);margin-bottom:18px}
 .hero h1 em{font-style:normal;color:var(--b)}
 .hero .lead{margin-bottom:24px}
 
-/* Encadré Prix (Style Bento épuré comme index) */
+/* Boîte Prix */
 .price-box{
   background:#fff;
   border:2px solid var(--a);
   border-radius:24px;
-  padding:26px;
-  box-shadow:0 18px 40px -14px rgba(245,158,11,.28);
+  padding:24px;
+  box-shadow:0 18px 40px -14px rgba(245,158,11,.25);
 }
-.price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
-.price-row b{font:800 clamp(40px,6vw,56px)/1 var(--fd);color:var(--ink)}
-.price-row s{font-size:19px;color:#94A3B8;font-weight:700}
-.price-row span{background:#DCFCE7;color:#166534;font-weight:800;font-size:12px;padding:3px 10px;border-radius:99px}
-.price-box p{font-size:13.5px;color:var(--mut);margin-bottom:14px}
-.benefits-list{list-style:none;display:grid;gap:9px;margin-bottom:20px;font-size:14px;font-weight:600}
+.price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price-row b{font:800 clamp(38px,5vw,50px)/1 var(--fd);color:var(--ink)}
+.price-row s{font-size:18px;color:#94A3B8;font-weight:700}
+.price-row span{background:#DCFCE7;color:#166534;font-weight:800;font-size:11.5px;padding:3px 10px;border-radius:99px}
+.price-box p{font-size:13px;color:var(--mut)}
+.benefits-list{list-style:none;display:grid;gap:8px;font-size:13.5px;font-weight:600}
 .benefits-list li{display:flex;gap:8px;align-items:center}
-.benefits-list li:before{content:"✓";width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:grid;place-items:center;font-size:11px;font-weight:900;flex-shrink:0}
+.benefits-list li:before{content:"✓";width:18px;height:18px;border-radius:50%;background:#DCFCE7;color:#166534;display:grid;place-items:center;font-size:10px;font-weight:900;flex-shrink:0}
 
 /* ================= LE MOCKUP STUDIO SAFARI ================= */
-/* Sur Ordinateur : 2 colonnes parfaitement proportionnées */
-@media(min-width:992px){
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    grid-template-areas:
-      "intro mockup"
-      "price mockup";
-    gap:0 48px;
-    align-items:start;
-  }
-  .hero-intro{grid-area:intro}
-  .hero-price{grid-area:price}
-  .hero-mockup-wrap{grid-area:mockup}
+.hero-mockup-wrap{position:relative;width:100%;}
+.example-badge {
+  display: flex; justify-content: center; margin-bottom: 12px;
+}
+.example-badge span {
+  background: rgba(29,78,216,0.08); color: var(--b); padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(29,78,216,0.15);
 }
 
-/* Sur Mobile : Titre -> MOCKUP -> Prix */
-@media(max-width:991px){
-  .hero-grid{display:flex;flex-direction:column}
-  .hero-intro{order:1}
-  .hero-mockup-wrap{order:2;margin:24px 0 26px; width: 100%;}
-  .hero-price{order:3}
-}
-
-.hero-mockup-wrap{
-  position:relative;
-  width:100%;
-}
 .browser-window{
   background:#ffffff;
   border-radius:22px;
@@ -254,7 +242,14 @@ nav{
 .browser-dot{width:10px;height:10px;border-radius:50%}
 .browser-dot.r{background:#FF5F56}
 .browser-dot.y{background:#FFBD2E}
-.browser-dot.g{background:#27C93F}
+.browser-dot.g{background:#27C93F; animation: pulseGreen 2s infinite;}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(39, 201, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(39, 201, 63, 0); }
+}
+
 .browser-url-bar{
   flex:1;
   background:#ffffff;
@@ -275,6 +270,7 @@ nav{
 }
 .browser-url-bar i{color:#059669;flex-shrink:0}
 
+/* SLIDER FONDU (CROSS-FADE) */
 .browser-screen{
   position:relative;
   aspect-ratio:16 / 10.5;
@@ -282,15 +278,32 @@ nav{
   background:#F8FAFC;
   overflow:hidden;
 }
-.browser-screen img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  display:block;
+.mockup-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mockup-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0;
+  animation: fadeSlide 12s ease-in-out infinite;
+}
+.mockup-slider img:nth-child(1) { animation-delay: 0s; }
+.mockup-slider img:nth-child(2) { animation-delay: 4s; }
+.mockup-slider img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes fadeSlide {
+  0%, 28% { opacity: 1; }
+  33%, 95% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-/* Badge de Preuve Google Intégré */
+/* Badge de Preuve Google Animé */
 .google-proof-ribbon{
   margin-top:16px;
   background:rgba(255,255,255,.94);
@@ -303,7 +316,13 @@ nav{
   align-items:center;
   justify-content:space-between;
   gap:10px;
+  animation: floatBadge 4s ease-in-out infinite;
 }
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 .proof-tag{display:flex;align-items:center;gap:10px}
 .proof-tag small{display:block;font-size:10.5px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .proof-tag strong{display:block;font-size:14px;color:var(--ink);font-weight:800}
@@ -319,7 +338,6 @@ nav{
   align-items:center;
   gap:4px;
 }
-
 /* Carte Google Flottante */
 .google-card{
   position:absolute;
@@ -593,21 +611,90 @@ footer a{color:var(--b);font-weight:700}
 
     </div>
 
-    <!-- 3. CARTE PRIX (Sous le texte sur PC, en 3ème sur Mobile) -->
+    <!-- Hero Section avec Mockup Studio Safari Pro -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    
+    <!-- 1. TEXTE HERO -->
+    <div class="hero-intro">
+      <div class="pill"><b>Offre Limitée</b> Domaine .com offert • 0 FCFA/an d'hébergement</div>
+      <h1>Si un client tape votre nom sur <em>Google</em>... qu'est-ce qu'il trouve ?</h1>
+      <p class="lead">
+        À l'ère des vendeurs de rêve, les bailleurs et recruteurs sérieux vérifient votre légitimité en ligne avant de signer un contrat. Ne laissez plus un simple CV PDF vous faire disqualifier.
+      </p>
+    </div>
+
+    <!-- 2. LE MOCKUP STUDIO SAFARI ANIMÉ -->
+    <div class="hero-mockup-wrap">
+      
+      <div class="example-badge">
+        <span>💡 Exemple de rendu final</span>
+      </div>
+
+      <!-- Châssis Navigateur Pro -->
+      <div class="browser-window">
+        <div class="browser-chrome">
+          <div class="browser-dots">
+            <span class="browser-dot r"></span>
+            <span class="browser-dot y"></span>
+            <span class="browser-dot g"></span>
+          </div>
+          <div class="browser-url-bar">
+            <i data-lucide="lock" style="width:12px;height:12px"></i>
+            <span>https://koffiolivierhounkpe.onghlemi.org</span>
+          </div>
+          <span style="font-size:10px;font-weight:800;color:#059669;background:#DCFCE7;padding:2px 6px;border-radius:4px;white-space:nowrap">Sécurisé</span>
+        </div>
+        
+        <!-- Écran avec SLIDER FONDU (3 images) -->
+        <div class="browser-screen">
+          <div class="mockup-slider">
+            <!-- Image 1 : Accueil -->
+            <img src="koffi-1.jpg" alt="Portfolio Accueil" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80'">
+            <!-- Image 2 : Terrain -->
+            <img src="koffi-2.jpg" alt="Portfolio Terrain" onerror="this.src='https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80'">
+            <!-- Image 3 : Stratégie -->
+            <img src="koffi-3.jpg" alt="Portfolio Stratégie" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'">
+          </div>
+        </div>
+      </div>
+
+      <!-- Ruban d'accréditation Google Flottant -->
+      <div class="google-proof-ribbon">
+        <div class="proof-tag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <div>
+            <small>Recherche Google</small>
+            <strong>"Koffi Olivier Hounkpè"</strong>
+          </div>
+        </div>
+        <div class="proof-pill">
+          <i data-lucide="check" style="width:13px;height:13px"></i>
+          <span>Résultat N°1 Vérifié</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3. CARTE PRIX (Élargie sur PC) -->
     <div class="hero-price">
       <div class="price-box">
-        <div class="price-row">
-          <s>75.000 F</s>
-          <b>29.900 F</b>
-          <span>-60% de réduction</span>
+        <div>
+          <div class="price-row">
+            <s>75.000 F</s>
+            <b>29.900 F</b>
+            <span>-60%</span>
+          </div>
+          <p>Payable comptant ou en 3 tranches (démarrez avec un acompte de <strong>9.900 FCFA</strong>).</p>
         </div>
-        <p>Payable comptant ou en 3 tranches (démarrez avec un acompte de <strong>9.900 FCFA</strong>).</p>
+        
         <ul class="benefits-list">
-          <li><strong>Nom de domaine .com OFFERT</strong> (1ère année incluse)</li>
-          <li><strong>0 FCFA/an d'hébergement</strong> (aucun renouvellement serveur)</li>
-          <li><strong>Mises à jour à 1.000 FCFA</strong> (par nouvel article ou activité)</li>
+          <li><strong>Nom de domaine .com OFFERT</strong> (1ère année)</li>
+          <li><strong>0 FCFA/an d'hébergement</strong> (à vie)</li>
+          <li><strong>Mises à jour à 1.000 FCFA</strong> (par ajout)</li>
         </ul>
-        <button class="btn btn-amber btn-lg" style="width:100%" onclick="openLeadModal('Hero CTA Principal')">
+        
+        <button class="btn btn-amber btn-lg" onclick="openLeadModal('Hero CTA Principal')">
           Demander ma maquette gratuitement →
         </button>
       </div>
@@ -922,14 +1009,31 @@ footer a{color:var(--b);font-weight:700}
 
 // Modales
 function lock(b){document.body.style.overflow=b?'hidden':''}
-function openLeadModal(source){
-  document.getElementById('lead-source').value=source||'Bouton Site';
-  document.getElementById('lead-modal').classList.add('on');
-  lock(1);
+// --- SCRIPT RÉPARÉ ET BLINDÉ POUR LA POP-UP ---
+function openLeadModal(source) {
+  var modal = document.getElementById('lead-modal');
+  if (!modal) {
+    alert("Attention : Le bloc HTML 'lead-modal' a été effacé du code.");
+    return;
+  }
+  var sourceInput = document.getElementById('lead-source');
+  if (sourceInput) sourceInput.value = source || 'Bouton Site';
+
+  modal.style.display = 'flex'; // Force l'affichage à l'écran
+  modal.classList.add('on');
+  document.body.style.overflow = 'hidden';
+
+  var nameInput = document.getElementById('lead-name');
+  if (nameInput) setTimeout(function(){ nameInput.focus(); }, 100);
 }
-function closeLeadModal(){
-  document.getElementById('lead-modal').classList.remove('on');
-  lock(0);
+
+function closeLeadModal() {
+  var modal = document.getElementById('lead-modal');
+  if (modal) {
+    modal.style.display = 'none'; // Ferme la pop-up
+    modal.classList.remove('on');
+  }
+  document.body.style.overflow = '';
 }
 function openContractModal(){
   document.getElementById('contract-modal').classList.add('on');
