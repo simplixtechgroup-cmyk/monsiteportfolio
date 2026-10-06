@@ -200,38 +200,124 @@ nav{
 .benefits-list li{display:flex;gap:8px;align-items:center}
 .benefits-list li:before{content:"✓";width:20px;height:20px;border-radius:50%;background:#DCFCE7;color:#166534;display:grid;place-items:center;font-size:11px;font-weight:900;flex-shrink:0}
 
-/* Visuel Hero : Cadre Photo + Google Flottant */
-.hero-visual{position:relative}
-.hero-img-wrap{
-  width:100%;
-  height:440px;
-  border-radius:26px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  box-shadow:var(--sh);
+/* ================= LE MOCKUP STUDIO SAFARI ================= */
+/* Sur Ordinateur : 2 colonnes parfaitement proportionnées */
+@media(min-width:992px){
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    grid-template-areas:
+      "intro mockup"
+      "price mockup";
+    gap:0 48px;
+    align-items:start;
+  }
+  .hero-intro{grid-area:intro}
+  .hero-price{grid-area:price}
+  .hero-mockup-wrap{grid-area:mockup}
+}
+
+/* Sur Mobile : Titre -> MOCKUP -> Prix */
+@media(max-width:991px){
+  .hero-grid{display:flex;flex-direction:column}
+  .hero-intro{order:1}
+  .hero-mockup-wrap{order:2;margin:24px 0 26px; width: 100%;}
+  .hero-price{order:3}
+}
+
+.hero-mockup-wrap{
   position:relative;
-  background:var(--paper);
+  width:100%;
 }
-.hero-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top}
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(11,18,32,.55) 0%,transparent 55%);
+.browser-window{
+  background:#ffffff;
+  border-radius:22px;
+  border:1px solid rgba(15,23,42,.12);
+  box-shadow:0 28px 70px -18px rgba(15,23,42,.2),0 0 0 1px rgba(15,23,42,.08);
+  overflow:hidden;
+  position:relative;
+  transition:transform .3s ease,box-shadow .3s ease;
 }
-.badge-prestige{
-  position:absolute;
-  top:16px;
-  right:16px;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(8px);
-  padding:6px 14px;
-  border-radius:12px;
+.browser-window:hover{
+  transform:translateY(-4px);
+  box-shadow:0 34px 80px -18px rgba(29,78,216,.25),0 0 0 1px rgba(29,78,216,.18);
+}
+.browser-chrome{
+  background:#F8FAFC;
+  border-bottom:1px solid rgba(15,23,42,.08);
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.browser-dots{display:flex;gap:6px}
+.browser-dot{width:10px;height:10px;border-radius:50%}
+.browser-dot.r{background:#FF5F56}
+.browser-dot.y{background:#FFBD2E}
+.browser-dot.g{background:#27C93F}
+.browser-url-bar{
+  flex:1;
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:8px;
+  padding:5px 12px;
   font-size:12px;
-  font-weight:800;
-  color:var(--ink);
+  color:#334155;
   display:flex;
   align-items:center;
   gap:6px;
+  font-family:var(--fb);
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  box-shadow:0 1px 2px rgba(0,0,0,.03);
+}
+.browser-url-bar i{color:#059669;flex-shrink:0}
+
+.browser-screen{
+  position:relative;
+  aspect-ratio:16 / 10.5;
+  width:100%;
+  background:#F8FAFC;
+  overflow:hidden;
+}
+.browser-screen img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  display:block;
+}
+
+/* Badge de Preuve Google Intégré */
+.google-proof-ribbon{
+  margin-top:16px;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px 18px;
+  box-shadow:var(--sh);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.proof-tag{display:flex;align-items:center;gap:10px}
+.proof-tag small{display:block;font-size:10.5px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.proof-tag strong{display:block;font-size:14px;color:var(--ink);font-weight:800}
+.proof-pill{
+  background:#DCFCE7;
+  color:#166534;
+  font-size:11.5px;
+  font-weight:800;
+  padding:4px 10px;
+  border-radius:99px;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:4px;
 }
 
 /* Carte Google Flottante */
@@ -451,11 +537,11 @@ footer a{color:var(--b);font-weight:700}
   <button class="btn btn-ink" onclick="openLeadModal('Bouton Nav')">Demander ma maquette</button>
 </nav>
 
-<!-- Hero Section avec Grille Responsable & Photo de M. Hounkpè -->
+<!-- Hero Section avec Mockup Studio Safari Pro -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     
-    <!-- 1. TEXTE HERO (En 1er sur PC et Mobile) -->
+    <!-- 1. TEXTE HERO (À gauche sur PC, en premier sur Mobile) -->
     <div class="hero-intro">
       <div class="pill"><b>Offre Limitée</b> Domaine .com offert • 0 FCFA/an d'hébergement</div>
       <h1>Si un client tape votre nom sur <em>Google</em>... qu'est-ce qu'il trouve ?</h1>
@@ -464,37 +550,50 @@ footer a{color:var(--b);font-weight:700}
       </p>
     </div>
 
-    <!-- 2. PHOTO & GOOGLE (En 2ème sur Mobile : AVANT le prix !) -->
-    <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <!-- VOTRE PHOTO (Source pointant vers votre portfolio) -->
-        <img src="koffiolivierhounkpe.jpg" 
-             alt="Koffi Olivier Hounkpè - Consultant"
-             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=85';">
-        <div class="hero-overlay"></div>
-        <div class="badge-prestige">
-          <span style="color:#10B981">●</span> Profil Vérifié
+    <!-- 2. LE MOCKUP STUDIO SAFARI (À droite sur PC, en 2ème sur Mobile) -->
+    <div class="hero-mockup-wrap">
+      
+      <!-- Châssis Navigateur Pro -->
+      <div class="browser-window">
+        <div class="browser-chrome">
+          <div class="browser-dots">
+            <span class="browser-dot r"></span>
+            <span class="browser-dot y"></span>
+            <span class="browser-dot g"></span>
+          </div>
+          <div class="browser-url-bar">
+            <i data-lucide="lock" style="width:12px;height:12px"></i>
+            <span>https://koffiolivierhounkpe.com</span>
+          </div>
+          <span style="font-size:10px;font-weight:800;color:#059669;background:#DCFCE7;padding:2px 6px;border-radius:4px;white-space:nowrap">Sécurisé</span>
+        </div>
+        
+        <!-- Écran avec votre vrai site propre -->
+        <div class="browser-screen">
+          <img src="koffiolivierhounkpe.jpg" 
+               alt="Portfolio officiel en ligne de Koffi Olivier Hounkpè"
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85';">
         </div>
       </div>
 
-      <!-- Carte Google Flottante -->
-      <div class="google-card" id="gm">
-        <div class="sb">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <span><span id="typed"></span><span class="caret"></span></span>
-        </div>
-        <div class="hit">
-          <div class="th">KH</div>
+      <!-- Ruban d'accréditation Google officiel sous le mockup -->
+      <div class="google-proof-ribbon">
+        <div class="proof-tag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <div>
-            <div class="u">https://koffiolivierhounkpe.onghlemi.org</div>
-            <div class="t">Koffi Olivier Hounkpè — Assistant Social & Consultant</div>
-            <div class="d">Site officiel : réalisations, références, diplômes et contact direct.</div>
+            <small>Recherche Google</small>
+            <strong>"Koffi Olivier Hounkpè"</strong>
           </div>
         </div>
+        <div class="proof-pill">
+          <i data-lucide="check" style="width:13px;height:13px"></i>
+          <span>Résultat N°1 Vérifié</span>
+        </div>
       </div>
+
     </div>
 
-    <!-- 3. CARTE PRIX (En 3ème sur Mobile : APRÈS la photo !) -->
+    <!-- 3. CARTE PRIX (Sous le texte sur PC, en 3ème sur Mobile) -->
     <div class="hero-price">
       <div class="price-box">
         <div class="price-row">
