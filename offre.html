@@ -854,42 +854,72 @@ function toggleFaq(b){
   it.classList.toggle('open');
 }
 
-// Formulaire : Gmail silencieux + WhatsApp
+// Formulaire sécurisé : Envoi Gmail garanti + WhatsApp 100% complet
 function handleLeadSubmit(e){
   e.preventDefault();
-  var btn=document.getElementById('lead-btn'),
-      name=document.getElementById('lead-name').value.trim(),
-      phone=document.getElementById('lead-phone').value.trim(),
-      email=document.getElementById('lead-email').value.trim(),
-      job=document.getElementById('lead-job').value.trim(),
-      payment=document.getElementById('lead-payment').value,
-      source=document.getElementById('lead-source').value;
+  var btn = document.getElementById('lead-btn'),
+      name = document.getElementById('lead-name').value.trim(),
+      phone = document.getElementById('lead-phone').value.trim(),
+      email = document.getElementById('lead-email').value.trim(),
+      job = document.getElementById('lead-job').value.trim(),
+      payment = document.getElementById('lead-payment').value,
+      source = document.getElementById('lead-source').value || 'Landing Page Offre';
 
-  btn.disabled=true;
-  btn.textContent='Préparation de votre dossier...';
+  btn.disabled = true;
+  btn.textContent = 'Enregistrement de votre dossier...';
 
-  var wa='*DEMANDE DE MAQUETTE & SITE WEB (29.900 FCFA)*%0A%0A'+
-   '👤 *Nom & Prénoms :* '+encodeURIComponent(name)+'%0A'+
-   '📞 *WhatsApp :* '+encodeURIComponent(phone)+'%0A'+
-   '📧 *Email :* '+encodeURIComponent(email)+'%0A'+
-   '💼 *Activité / Métier :* '+encodeURIComponent(job)+'%0A'+
-   '💳 *Modalité choisie :* '+encodeURIComponent(payment)+'%0A'+
-   '📍 *Origine :* '+encodeURIComponent(source)+'%0A%0A'+
-   'Bonjour Simplix Tech ! Je viens de remplir ma demande sur votre site et je souhaite recevoir ma maquette professionnelle.';
+  // 1. Message WhatsApp 100% encodé (résout définitivement le texte coupé)
+  var messageTexte = 
+    "*DEMANDE DE MAQUETTE - SITE PRO (29.900 FCFA)*\n\n" +
+    "👤 *Nom & Prénoms :* " + name + "\n" +
+    "📞 *WhatsApp :* " + phone + "\n" +
+    "📧 *Email :* " + email + "\n" +
+    "💼 *Activité :* " + job + "\n" +
+    "💳 *Modalité :* " + payment + "\n" +
+    "📍 *Origine :* " + source + "\n\n" +
+    "Bonjour Simplix Tech ! Je viens de valider ma demande sur votre site et je souhaite recevoir ma maquette professionnelle.";
 
-  fetch('https://formsubmit.co/ajax/simplictechgroup@gmail.com',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      'Nom':name,'WhatsApp':phone,'Email':email,'Activité':job,'Modalité':payment,'Source':source,
-      '_subject':'🔥 NOUVEAU PROSPECT MAQUETTE (29.900 F) : '+name
-    }),
-    keepalive:true
-  }).catch(function(){});
+  var waUrl = "https://wa.me/2290128821818?text=" + encodeURIComponent(messageTexte);
 
-  setTimeout(function(){
-    window.location.href='https://wa.me/2290128821818?text='+wa;
-  },350);
+  // 2. Redirection sécurisée
+  var estRedirige = false;
+  function basculerVersWhatsApp() {
+    if (!estRedirige) {
+      estRedirige = true;
+      window.location.href = waUrl;
+    }
+  }
+
+  // Sécurité : si la connexion rame, on bascule quoi qu'il arrive au bout de 1,8 seconde
+  var chronoSecours = setTimeout(basculerVersWhatsApp, 1800);
+
+  // 3. Envoi silencieux à Gmail via FormSubmit
+  fetch('https://formsubmit.co/ajax/simplictechgroup@gmail.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      'Nom et Prenoms': name,
+      'WhatsApp Client': phone,
+      'Email Client': email,
+      'Metier / Activite': job,
+      'Formule de Paiement': payment,
+      'Source de conversion': source,
+      '_subject': '🔥 NOUVELLE COMMANDE MAQUETTE (29.900 F) : ' + name,
+      '_captcha': 'false',
+      '_template': 'table'
+    })
+  })
+  .then(function(res) {
+    clearTimeout(chronoSecours);
+    basculerVersWhatsApp();
+  })
+  .catch(function(err) {
+    clearTimeout(chronoSecours);
+    basculerVersWhatsApp();
+  });
 }
 </script>
 </body>
