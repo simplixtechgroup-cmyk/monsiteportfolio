@@ -118,7 +118,32 @@ h2.t{font:800 clamp(26px,4.5vw,52px)/1.1 var(--fd);letter-spacing:-1px;margin-bo
 .hero h1{font:800 clamp(34px,6.2vw,84px)/1.02 var(--fd);letter-spacing:-1.5px;margin-bottom:22px}
 @media(min-width:768px){.hero h1{letter-spacing:-3px}}
 
-.type{color:var(--blue);display:inline-block;min-height:1em;background:linear-gradient(transparent 68%,rgba(245,158,11,.32) 68%)}
+/* Le Cadre Verrouillé anti-secousse */
+.type-box {
+  display: inline-flex;
+  align-items: center;
+  min-width: 340px; /* Réserve l'espace pour le mot le plus long */
+  background: rgba(29, 78, 216, 0.06);
+  border: 1.5px solid rgba(29, 78, 216, 0.2);
+  border-radius: 16px;
+  padding: 4px 16px;
+  color: var(--blue);
+  vertical-align: middle;
+  box-shadow: 0 4px 14px -4px rgba(29, 78, 216, 0.12);
+}
+
+.type {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+@media(max-width: 640px){
+  .type-box {
+    min-width: 240px;
+    padding: 2px 12px;
+    border-radius: 12px;
+  }
+}
 .cur{color:var(--amber2);font-weight:300;animation:bl .8s step-end infinite}@keyframes bl{50%{opacity:0}}
 .hero .lead{margin-bottom:34px}
 .acts{display:flex;gap:12px;flex-wrap:wrap}
@@ -290,7 +315,12 @@ footer .logo-i{width:46px;height:46px;font-size:22px;margin:0 auto 14px;border-r
   <div class="wrap hero-grid">
     <div>
       <div class="pill rv"><b>Nouveau</b> Votre site pro à 29.900 F • .com offert</div>
-      <h1 class="rv">Des solutions logicielles taillées pour <span id="dynamic-text" class="type"></span><span class="cur">|</span></h1>
+      <h1 class="rv">
+  Des solutions logicielles taillées pour<br>
+  <span class="type-box">
+    <span id="dynamic-text" class="type"></span><span class="cur">|</span>
+  </span>
+</h1>
       <p class="lead rv" id="sl-hero-subtitle">Simplix Tech Group conçoit des technologies adaptées aux réalités des communautés, des PME et des organisations modernes en Afrique et à l'international.</p>
       <div class="acts rv">
         <a class="btn btn-amber" href="#solutions">Découvrir nos solutions <i data-lucide="arrow-right" style="width:15px"></i></a>
