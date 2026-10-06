@@ -893,7 +893,7 @@ function handleLeadSubmit(e){
   // Sécurité : si la connexion rame, on bascule quoi qu'il arrive au bout de 1,8 seconde
   var chronoSecours = setTimeout(basculerVersWhatsApp, 1800);
 
-  // 3. Envoi silencieux à Gmail via FormSubmit
+  // 1. On lance l'envoi de l'e-mail en arrière-plan silencieux
   fetch('https://formsubmit.co/ajax/simplixtechgroup@gmail.com', {
     method: 'POST',
     headers: {
@@ -906,21 +906,18 @@ function handleLeadSubmit(e){
       'Email Client': email,
       'Metier / Activite': job,
       'Formule de Paiement': payment,
-      'Source de conversion': source,
+      'Source': source,
       '_subject': '🔥 NOUVELLE COMMANDE MAQUETTE (29.900 F) : ' + name,
       '_captcha': 'false',
       '_template': 'table'
-    })
-  })
-  .then(function(res) {
-    clearTimeout(chronoSecours);
-    basculerVersWhatsApp();
-  })
-  .catch(function(err) {
-    clearTimeout(chronoSecours);
-    basculerVersWhatsApp();
-  });
-}
+    }),
+    keepalive: true // Garantit que l'email part même si la page se ferme
+  }).catch(function(){});
+
+  // 2. On propulse le client sur WhatsApp en seulement 350 ms chrono !
+  setTimeout(function(){
+    window.location.href = waUrl;
+  }, 350);
 </script>
 </body>
 </html>
