@@ -142,38 +142,53 @@ nav{
   background:radial-gradient(900px 420px at 90% -10%,rgba(59,130,246,.12),transparent 70%),radial-gradient(700px 400px at 0 10%,rgba(245,158,11,.10),transparent 70%),#fff;
 }
 
+/* ================= DISPOSITION DE LA BARRE DE PRIX ================= */
 @media(min-width:992px){
   .hero-grid{
     display:grid;
-    grid-template-columns:1.05fr .95fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "intro mockup"
-      "price mockup";
-    gap:0 48px;
-    align-items:start;
-  }
-  .hero-intro{grid-area:intro}
-  .hero-price{grid-area:price}
-  .hero-mockup-wrap{grid-area:mockup}
-  
-  /* Boîte de prix rectangulaire large sur PC */
-  .price-box {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 12px 24px;
+      "price price"; /* Le prix prend TOUTE la largeur sous l'écris et le mockup */
+    gap: 36px 48px;
     align-items: center;
   }
-  .price-box .btn-amber { grid-column: 1 / -1; margin-top: 8px; }
-  .price-box p { grid-column: 1 / -1; margin-bottom: 0; }
+  .hero-intro{grid-area:intro}
+  .hero-mockup-wrap{grid-area:mockup}
+  .hero-price{grid-area:price; width:100%}
+
+  /* La boîte devient une barre horizontale sur PC */
+  .price-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 32px;
+  }
+  .price-col-left{flex-shrink: 0}
+  .price-box .benefits-list{margin-bottom: 0}
+  .price-col-cta{flex-shrink: 0}
+  .price-col-cta .btn{width: auto; white-space: nowrap}
 }
 
 @media(max-width:991px){
-  .hero-grid{display:flex;flex-direction:column}
+  .hero-grid{display:flex; flex-direction:column}
   .hero-intro{order:1}
-  .hero-mockup-wrap{order:2;margin:24px 0 26px; width: 100%;}
+  .hero-mockup-wrap{order:2; margin:24px 0 26px; width:100%}
   .hero-price{order:3}
+  .price-box{display:flex; flex-direction:column; gap:16px; padding:22px}
+  .price-col-cta .btn{width:100%}
 }
 
+.price-guarantees{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--mut);
+  margin-top: 14px;
+}
 .pill{
   display:inline-flex;
   align-items:center;
@@ -567,30 +582,38 @@ footer a{color:var(--b);font-weight:700}
 
     </div>
 
-    <!-- 3. CARTE PRIX (Sous le texte sur PC, en 3ème sur Mobile) -->
+    <!-- 3. CARTE PRIX (En large barre rectangulaire en bas) -->
     <div class="hero-price">
       <div class="price-box">
-        <div>
+        
+        <!-- Gauche : Prix et Réduction -->
+        <div class="price-col-left">
           <div class="price-row">
             <s>75.000 F</s>
             <b>29.900 F</b>
             <span>-60%</span>
           </div>
-          <p>Payable comptant ou en 3 tranches (démarrez avec un acompte de <strong>9.900 FCFA</strong>).</p>
+          <p>Payable en 3 tranches (Acompte de <strong>9.900 FCFA</strong>).</p>
         </div>
         
+        <!-- Centre : Avantages clés -->
         <ul class="benefits-list">
-          <li><strong>Nom de domaine .com OFFERT</strong> (1ère année)</li>
-          <li><strong>0 FCFA/an d'hébergement</strong> (à vie)</li>
-          <li><strong>Mises à jour à 1.000 FCFA</strong> (par ajout)</li>
+          <li><strong>Nom de domaine .com OFFERT</strong> (1ère année incluse)</li>
+          <li><strong>0 FCFA/an d'hébergement</strong> (aucun renouvellement serveur)</li>
+          <li><strong>Mises à jour à 1.000 FCFA</strong> (par nouvel article ou activité)</li>
         </ul>
         
-        <button class="btn btn-amber btn-lg" onclick="openLeadModal('Hero CTA Principal')">
-          Demander ma maquette gratuitement →
-        </button>
+        <!-- Droite : Bouton CTA -->
+        <div class="price-col-cta">
+          <button class="btn btn-amber btn-lg" onclick="openLeadModal('Hero CTA Principal')">
+            Demander ma maquette gratuitement →
+          </button>
+        </div>
+
       </div>
 
-      <div style="font-size:13px;color:var(--mut);display:flex;gap:14px;flex-wrap:wrap;margin-top:12px">
+      <!-- Garanties centrées sous la barre -->
+      <div class="price-guarantees">
         <span>🛡️ Zéro paiement initial</span>
         <span>⏱️ Aperçu sur WhatsApp en 24-48h</span>
         <button onclick="openContractModal()" style="background:none;border:0;color:var(--b);font-weight:700;cursor:pointer;text-decoration:underline">Lire le contrat type</button>
