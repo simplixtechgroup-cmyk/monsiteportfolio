@@ -142,44 +142,108 @@ nav{
   background:radial-gradient(900px 420px at 90% -10%,rgba(59,130,246,.12),transparent 70%),radial-gradient(700px 400px at 0 10%,rgba(245,158,11,.10),transparent 70%),#fff;
 }
 
-/* ================= DISPOSITION DE LA BARRE DE PRIX ================= */
-@media(min-width:992px){
+/* ================= BARRE DE PRIX INTELLIGENTE & TOUS ÉCRANS ================= */
+
+/* 1. Grand Écran PC (1080px et plus) : Barre 3 colonnes fluide */
+@media(min-width: 1080px){
   .hero-grid{
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "intro mockup"
-      "price price"; /* Le prix prend TOUTE la largeur sous l'écris et le mockup */
-    gap: 36px 48px;
+      "price price";
+    gap: 32px 44px;
     align-items: center;
   }
-  .hero-intro{grid-area:intro}
-  .hero-mockup-wrap{grid-area:mockup}
-  .hero-price{grid-area:price; width:100%}
+  .hero-intro{grid-area: intro}
+  .hero-mockup-wrap{grid-area: mockup}
+  .hero-price{grid-area: price; width: 100%;}
 
-  /* La boîte devient une barre horizontale sur PC */
   .price-box{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 22px 32px;
+    gap: 20px;
+    padding: 20px 28px;
+    box-sizing: border-box;
   }
   .price-col-left{flex-shrink: 0}
-  .price-box .benefits-list{margin-bottom: 0}
   .price-col-cta{flex-shrink: 0}
-  .price-col-cta .btn{width: auto; white-space: nowrap}
+  .price-col-cta .btn{width: auto; white-space: nowrap; padding: 0 24px;}
 }
 
-@media(max-width:991px){
-  .hero-grid{display:flex; flex-direction:column}
-  .hero-intro{order:1}
-  .hero-mockup-wrap{order:2; margin:24px 0 26px; width:100%}
-  .hero-price{order:3}
-  .price-box{display:flex; flex-direction:column; gap:16px; padding:22px}
-  .price-col-cta .btn{width:100%}
+/* 2. Tablette & Petits PC 13" (768px à 1079px) : Prix à gauche, Avantages à droite, Bouton pleine largeur en bas */
+@media(min-width: 768px) and (max-width: 1079px){
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "intro mockup"
+      "price price";
+    gap: 28px 36px;
+    align-items: center;
+  }
+  .hero-intro{grid-area: intro}
+  .hero-mockup-wrap{grid-area: mockup}
+  .hero-price{grid-area: price; width: 100%;}
+
+  .price-box{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 16px 20px;
+    align-items: center;
+    padding: 22px;
+    box-sizing: border-box;
+  }
+  .price-col-cta{
+    grid-column: 1 / -1;
+  }
+  .price-col-cta .btn{
+    width: 100% !important;
+  }
 }
 
+/* 3. Mobile (< 768px) : Défilement vertical propre */
+@media(max-width: 767px){
+  .hero-grid{display: flex; flex-direction: column}
+  .hero-intro{order: 1}
+  .hero-mockup-wrap{order: 2; margin: 20px 0 24px; width: 100%}
+  .hero-price{order: 3; width: 100%}
+  .price-box{display: flex; flex-direction: column; gap: 14px; padding: 20px}
+  .price-col-cta .btn{width: 100% !important}
+}
+
+/* Nettoyage du texte des avantages (Évite les coupures bizarres) */
+.benefits-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+.benefits-list li{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  font-size: 13.5px;
+  line-height: 1.4;
+  white-space: normal;
+}
+.benefits-list li:before{
+  content: "✓";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  color: #166534;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
 .price-guarantees{
   display: flex;
   justify-content: center;
