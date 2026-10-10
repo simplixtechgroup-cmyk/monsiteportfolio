@@ -547,12 +547,14 @@ function handleLeadSubmit(e){
   btn.disabled=true;
   btn.textContent="Ouverture de WhatsApp…";
 
-  // 1. ENREGISTREMENT AUTOMATIQUE BREVO (Avec l'Email et le Profil)
+  // 1. ENREGISTREMENT COMPLET DANS BREVO
   var brevoUrl = "https://ce2c06dd.sibforms.com/serve/MUIFAOqBv93f0GrZNotN41UfD-GTYugS6hPu57Xv3CfuASnZEwljI1Lit2gcz62RQoZdL7eMa4FVQRwdcV_vo8N3Tys_3iXjONo36MZVrQAkz4AOOhdkuzvLBYItLGRq0d2kXe7dtkJBYp1rdkXa35prpUwOjfJSH-eRpuqoR3867mSCysutHra4fyJj0SyUCHzFURdSofRLD-gX4g==";
   
   var brevoData = new FormData();
   brevoData.append("EMAIL", email);
   brevoData.append("NOM", name);
+  brevoData.append("PRENOM", name);
+  brevoData.append("JOB_TITLE", job);
   brevoData.append("email_address_check", "");
   brevoData.append("locale", "fr");
 
