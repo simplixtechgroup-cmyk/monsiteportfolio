@@ -141,6 +141,22 @@ h1{font-size:clamp(32px,4.6vw,58px);margin-bottom:16px}h1 em{font-style:normal;c
   }
   .price-col-cta .btn{width:100%!important}
 }
+  /* FORCER LE CENTRAGE DE LA SECTION TEXTE SUR MOBILE */
+  .ti {
+    text-align: center !important;
+  }
+  .ti h1 {
+    text-align: center !important;
+  }
+  .ti .lead {
+    text-align: center !important;
+    margin-inline: auto !important;
+    max-width: 36ch;
+  }
+  .cap {
+    margin-inline: auto !important;
+    display: table !important;
+  }
 @media(min-width:1024px){.hg{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px 60px}}
 .cap{font-size:13px;font-weight:700;color:var(--mut);text-align:center;margin-bottom:10px}
 .bw{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 28px 64px -18px rgba(15,23,42,.22)}
