@@ -256,6 +256,44 @@ footer p{margin-bottom:6px}footer a{color:var(--b);font-weight:700}
   #contract-modal h3{font-size:17pt!important}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.scr img:first-child{opacity:1}}
+/* 1. Nettoie "Lire le contrat type" : Enlève la boîte noire et remet le lien bleu propre */
+.lnk, button.lnk {
+  background: none !important;
+  border: 0 !important;
+  border-width: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: var(--b) !important;
+  font: 700 13px var(--fb) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block;
+}
+.lnk:hover, button.lnk:hover {
+  color: var(--b2) !important;
+}
+
+/* 2. Sur Mobile SEULEMENT : Titre CENTRÉ et Texte JUSTIFIÉ */
+@media(max-width: 767px){
+  .ti h1, h1 {
+    text-align: center !important;
+  }
+  .ti .lead, .hero .lead {
+    text-align: justify !important;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}
+
+/* 3. Sur PC : Tout reste aligné à gauche intact */
+@media(min-width: 768px){
+  .ti h1, h1, .ti .lead, .hero .lead {
+    text-align: left !important;
+  }
+}
 </style>
 </head>
 <body>
