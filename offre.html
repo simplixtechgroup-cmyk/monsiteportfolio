@@ -401,26 +401,46 @@ footer p{margin-bottom:6px}footer a{color:var(--b);font-weight:700}
     <p>Sans engagement initial. Renseignez vos coordonnées : nous préparons votre maquette et nous vous répondons sur WhatsApp.</p>
     <form id="lead-form" onsubmit="handleLeadSubmit(event)">
       <input type="hidden" id="lead-source" value="Landing Page">
-      <div class="f"><label for="lead-name">Nom et prénoms *</label><input type="text" id="lead-name" required autocomplete="name" placeholder="Ex : Jean-Baptiste DOSSOU"></div>
-      <div class="f"><label for="lead-phone">Numéro WhatsApp (avec indicatif) *</label><input type="tel" id="lead-phone" required autocomplete="tel" inputmode="tel" placeholder="Ex : +229 01 00 00 00 00"></div>
-      <div class="f"><label for="lead-email">Adresse e-mail *</label><input type="email" id="lead-email" required autocomplete="email" inputmode="email" placeholder="Ex : jean.dossou@gmail.com"></div>
-      <div class="f"><label for="lead-job">Métier ou activité *</label><input type="text" id="lead-job" required autocomplete="organization-title" placeholder="Ex : consultant, formateur, juriste…"></div>
-      <div class="f"><label for="lead-profile">Votre profil *</label>
+      
+      <!-- 1. Nom -->
+      <div class="f">
+        <label for="lead-name">Nom et prénoms *</label>
+        <input type="text" id="lead-name" required autocomplete="name" placeholder="Ex : Jean-Baptiste DOSSOU">
+      </div>
+      
+      <!-- 2. Email (Pour l'emailing Brevo) -->
+      <div class="f">
+        <label for="lead-email">Adresse e-mail *</label>
+        <input type="email" id="lead-email" required autocomplete="email" inputmode="email" placeholder="Ex : jean.dossou@gmail.com">
+      </div>
+      
+      <!-- 3. Métier -->
+      <div class="f">
+        <label for="lead-job">Métier ou domaine d'expertise *</label>
+        <input type="text" id="lead-job" required placeholder="Ex : Consultant en gestion, Formateur RH, Juriste…">
+      </div>
+      
+      <!-- 4. NIVEAU DE PROFIL (Pour votre segmentation d'e-mails) -->
+      <div class="f">
+        <label for="lead-profile">Votre expérience professionnelle *</label>
         <select id="lead-profile" required>
-          <option value="Professionnel individuel, moins de 10 ans d’expérience" selected>Professionnel individuel — moins de 10 ans d’expérience (29.900 F)</option>
-          <option value="Professionnel individuel, 10 ans ou plus d’expérience">Professionnel individuel — 10 ans ou plus (Sur devis)</option>
-          <option value="PME, ONG ou autre organisation">PME, ONG ou autre organisation (Sur devis)</option>
+          <option value="Moins de 10 ans d'expérience (Forfait 29.900 F)" selected>Moins de 10 ans d’expérience (Forfait 29.900 F)</option>
+          <option value="10 ans d'expérience ou plus (Devis sur mesure)">10 ans d’expérience ou plus (Projet sur mesure)</option>
+          <option value="Entreprise, ONG ou Cabinet (Devis sur mesure)">Entreprise, ONG ou Cabinet (Projet sur mesure)</option>
         </select>
       </div>
-      <div class="f"><label for="lead-payment">Modalité de paiement préférée *</label>
+
+      <!-- 5. Modalité de paiement -->
+      <div class="f">
+        <label for="lead-payment">Modalité préférée *</label>
         <select id="lead-payment" required>
-          <option value="En 3 tranches (acompte de 9.900 FCFA)">3 tranches (acompte de 9.900 FCFA), recommandé</option>
-          <option value="Paiement comptant de 29.900 FCFA">Paiement comptant de 29.900 FCFA</option>
+          <option value="En 3 tranches (acompte de 9.900 FCFA)">3 tranches (Acompte de 9.900 F après maquette)</option>
+          <option value="Paiement comptant de 29.900 FCFA">Paiement comptant (29.900 FCFA)</option>
         </select>
       </div>
-      <button type="submit" id="lead-btn" class="btn ink lg" style="margin-top:6px">Envoyer ma demande sur WhatsApp</button>
-      <p class="note">🔒 Aucun paiement maintenant. Vos données servent uniquement à concevoir votre maquette.</p>
-      <p id="lead-status" class="form-status" role="status" aria-live="polite"></p>
+
+      <button type="submit" id="lead-btn" class="btn ink lg" style="margin-top:6px">Valider et échanger sur WhatsApp</button>
+      <p class="note">🔒 Aucun paiement maintenant. Vos données servent à préparer votre maquette.</p>
     </form>
   </div>
 </div>
@@ -512,12 +532,11 @@ document.addEventListener("keydown",function(e){
 });
 function toggleFaq(b){var it=b.parentElement.parentElement,o=it.classList.toggle("open");b.setAttribute("aria-expanded",o)}
 
-// Soumission Ultime : Brevo (Emailing) + Gmail (Notification) + WhatsApp (Closing)
+// Soumission fluide sans champ WhatsApp + Segmentation Brevo
 function handleLeadSubmit(e){
   e.preventDefault();
   var btn=document.getElementById("lead-btn"),
       name=document.getElementById("lead-name").value.trim(),
-      phone=document.getElementById("lead-phone").value.trim(),
       email=document.getElementById("lead-email").value.trim(),
       job=document.getElementById("lead-job").value.trim(),
       profile=document.getElementById("lead-profile").value,
@@ -528,11 +547,12 @@ function handleLeadSubmit(e){
   btn.disabled=true;
   btn.textContent="Ouverture de WhatsApp…";
 
-  // 1. ENREGISTREMENT AUTOMATIQUE DANS TA LISTE BREVO (Silencieux)
+  // 1. ENREGISTREMENT AUTOMATIQUE BREVO (Avec l'Email et le Profil)
   var brevoUrl = "https://ce2c06dd.sibforms.com/serve/MUIFAOqBv93f0GrZNotN41UfD-GTYugS6hPu57Xv3CfuASnZEwljI1Lit2gcz62RQoZdL7eMa4FVQRwdcV_vo8N3Tys_3iXjONo36MZVrQAkz4AOOhdkuzvLBYItLGRq0d2kXe7dtkJBYp1rdkXa35prpUwOjfJSH-eRpuqoR3867mSCysutHra4fyJj0SyUCHzFURdSofRLD-gX4g==";
   
   var brevoData = new FormData();
   brevoData.append("EMAIL", email);
+  brevoData.append("NOM", name);
   brevoData.append("email_address_check", "");
   brevoData.append("locale", "fr");
 
@@ -543,33 +563,40 @@ function handleLeadSubmit(e){
     keepalive: true
   }).catch(function(){});
 
-  // 2. NOTIFICATION GMAIL (FormSubmit)
+  // 2. NOTIFICATION GMAIL (Précise si c'est un <10 ans ou un gros profil sur devis !)
+  var isCustom = profile.indexOf("10 ans d'expérience ou plus") !== -1 || profile.indexOf("Entreprise") !== -1;
+
   fetch("https://formsubmit.co/ajax/simplixtechgroup@gmail.com",{
     method:"POST",
     headers:{"Content-Type":"application/json","Accept":"application/json"},
     body:JSON.stringify({
-      "Nom et prénoms":name,
-      "WhatsApp client":phone,
-      "E-mail client":email,
-      "Métier / activité":job,
-      "Profil":profile,
-      "Formule de paiement":payment,
-      "Source":source,
-      "_subject":"NOUVELLE DEMANDE DE MAQUETTE : "+name,
-      "_captcha":"false",
-      "_template":"table",
-      "_honey":""
+      "Nom et prénoms": name,
+      "E-mail client": email,
+      "Métier / domaine": job,
+      "Profil sélectionné": profile,
+      "Formule de paiement": payment,
+      "Source": source,
+      "_subject": (isCustom ? "🚀 PROSPECT SENIOR / SUR DEVIS : " : "🔥 NOUVELLE COMMANDE MAQUETTE (29.900 F) : ") + name,
+      "_captcha": "false",
+      "_template": "table",
+      "_honey": ""
     }),
     keepalive:true
   }).catch(function(){});
 
-  // 3. MESSAGE ET REDIRECTION WHATSAPP INSTANTANÉE (350 ms)
-  var isCustom = profile !== "Professionnel individuel, moins de 10 ans d’expérience";
-  var msg="*DEMANDE "+(isCustom?"DE DEVIS PERSONNALISÉ":"DE MAQUETTE")+" - SIMPLIX TECH GROUP*\n\n"+
-    "*Nom et prénoms :* "+name+"\n*WhatsApp :* "+phone+"\n*E-mail :* "+email+"\n*Activité :* "+job+"\n*Profil :* "+profile+"\n*Modalité :* "+payment+"\n*Origine :* "+source+"\n\n"+
-    (isCustom ? "Bonjour Simplix Tech, je souhaite discuter de mon besoin et recevoir un devis personnalisé." : "Bonjour Simplix Tech, je souhaite recevoir une première maquette de mon site professionnel.");
+  // 3. MESSAGE WHATSAPP (Pas besoin de répéter son téléphone, il vous écrit déjà avec !)
+  var msg = "*DEMANDE " + (isCustom ? "DE DEVIS PERSONNALISÉ" : "DE MAQUETTE SITE PRO") + " - SIMPLIX TECH GROUP*\n\n" +
+    "*Nom et prénoms :* " + name + "\n" +
+    "*E-mail :* " + email + "\n" +
+    "*Activité :* " + job + "\n" +
+    "*Profil :* " + profile + "\n" +
+    "*Modalité :* " + payment + "\n" +
+    "*Origine :* " + source + "\n\n" +
+    (isCustom 
+      ? "Bonjour Simplix Tech ! J'ai plus de 10 ans d'expérience (ou une structure) et je souhaite discuter d'un devis adapté à mon profil." 
+      : "Bonjour Simplix Tech ! Je viens de remplir votre formulaire et je souhaite recevoir ma première maquette.");
 
-  var waUrl="https://wa.me/2290128821818?text="+encodeURIComponent(msg);
+  var waUrl = "https://wa.me/2290128821818?text=" + encodeURIComponent(msg);
 
   setTimeout(function(){
     window.location.href = waUrl;
