@@ -72,148 +72,100 @@ nav{position:sticky;top:10px;z-index:100;max-width:1100px;width:calc(100% - 24px
 .lk{display:none;gap:2px}.lk a{padding:8px 12px;border-radius:10px;font-size:14px;font-weight:600;color:var(--mut);text-decoration:none}.lk a:hover{background:var(--paper);color:var(--ink)}
 @media(min-width:900px){.lk{display:flex}}
 
-/* hero */
-.hero{padding:clamp(28px,5vw,60px) 0 clamp(52px,7vw,84px);background:radial-gradient(800px 400px at 90% -10%,rgba(59,130,246,.10),transparent 70%),radial-gradient(600px 300px at 0 10%,rgba(245,158,11,.07),transparent 70%)}
-.hg{display:grid;gap:30px}
-.pill{display:none;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);padding:5px 16px 5px 6px;border-radius:99px;font-size:13px;font-weight:600;margin-bottom:20px}
+/* ================= HERO RECADRÉ & SÉCURISÉ ================= */
+.hero{
+  padding:clamp(28px,5vw,60px) 0 clamp(48px,7vw,80px);
+  background:radial-gradient(800px 400px at 90% -10%,rgba(59,130,246,.10),transparent 70%),radial-gradient(600px 300px at 0 10%,rgba(245,158,11,.07),transparent 70%);
+}
+.hg{
+  display:grid;
+  gap:26px;
+  width:100%;
+}
+.pill{display:none;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);padding:5px 16px 5px 6px;border-radius:99px;font-size:13px;font-weight:600;margin-bottom:18px}
 .pill b{background:var(--a);border-radius:99px;padding:2px 10px;font-size:12px}
-h1{font-size:clamp(32px,4.6vw,58px);margin-bottom:16px}h1 em{font-style:normal;color:var(--b)}
-.ti .lead{margin-bottom:0}
-/* ================= AFFICHAGE MOBILE SUBLIMÉ & CENTRÉ ================= */
+
+/* LE TITRE H1 : INTACT À GAUCHE SUR PC, CENTRÉ UNIQUEMENT SUR MOBILE */
+h1{
+  font-size:clamp(30px,4.6vw,56px);
+  margin-bottom:16px;
+  text-align:left; /* Intact sur PC */
+}
+h1 em{font-style:normal;color:var(--b)}
+
 @media(max-width:767px){
-  section{padding:50px 0}
-  .hero{padding:24px 0 40px}
-  .hero-grid{display:flex; flex-direction:column; align-items:center}
-  
-  /* 1. Titre & Sous-titre parfaitement centrés et aérés */
-  .hero-intro{
-    order:1;
-    text-align:center;
-    width:100%;
+  h1{
+    text-align:center !important; /* CENTRÉ SUR MOBILE SEULEMENT */
   }
-  .hero h1{
-    font-size:clamp(29px, 7.6vw, 38px);
-    margin-bottom:14px;
-    line-height:1.12;
-    letter-spacing:-0.02em;
-  }
-  .hero-intro .lead{
-    font-size:14.5px;
-    line-height:1.6;
-    margin:0 auto 20px;
-    max-width:36ch; /* Évite que les lignes soient trop longues à lire */
-    color:var(--mut);
-  }
+}
 
-  .pill{display:none!important} /* Garde le haut très épuré */
+/* Le sous-titre reste normal et intact */
+.ti .lead{margin-bottom:0}
 
-  /* 2. Mockup centré avec badge élégant */
-  .hero-mockup-wrap{
-    order:2;
-    margin:10px 0 24px;
-    width:100%;
-    text-align:center;
-  }
-  .cap{
-    display:inline-flex;
+/* Grille PC : Texte à gauche, Mockup à droite, Prix pleine largeur en bas */
+@media(min-width:768px){
+  .hg{
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    grid-template-areas:
+      "ti mk"
+      "pr pr"
+      "nt nt";
+    gap:32px 48px;
     align-items:center;
-    gap:6px;
-    background:rgba(29,78,216,0.07);
-    color:var(--b);
-    border:1px solid rgba(29,78,216,0.14);
-    padding:4px 14px;
-    border-radius:99px;
-    font-size:11px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-    margin:0 auto 12px;
   }
-
-  /* 3. Boîte de Prix compacte et propre */
-  .hero-price{order:3; width:100%}
-  .price-box{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    padding:20px 18px;
-    border-radius:20px;
-  }
-  .price-col-cta .btn{width:100%!important}
-}
-  /* FORCER LE CENTRAGE DE LA SECTION TEXTE SUR MOBILE */
-  .ti {
-    text-align: center !important;
-  }
-  .ti h1 {
-    text-align: center !important;
-  }
-  .ti .lead {
-    text-align: center !important;
-    margin-inline: auto !important;
-    max-width: 36ch;
-  }
-  .cap {
-    margin-inline: auto !important;
-    display: table !important;
-  }
-  /* ================= RÈGLE STRICTE TITRE & TEXTE ================= */
-
-/* 1. Sur Ordinateur : STRICTEMENT ALIGNÉ À GAUCHE */
-@media(min-width: 768px){
-  .ti, .ti h1, .ti .lead {
-    text-align: left !important;
-    margin-inline: 0 !important;
-  }
+  .ti{grid-area:ti}
+  .mk{grid-area:mk}
+  .price{grid-area:pr;width:100%}
+  .hero-note{grid-area:nt;width:100%}
+  .pill{display:inline-flex}
 }
 
-/* 2. Sur Mobile : LE TITRE SEUL EST CENTRÉ, LE TEXTE EST JUSTIFIÉ */
-@media(max-width: 767px){
-  .ti h1 {
-    text-align: center !important;
-  }
-  .ti .lead {
-    text-align: justify !important;
-    text-justify: inter-word;
-    margin: 0 auto 20px !important;
-  }
-}
-@media(min-width:1024px){.hg{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px 60px}}
-.cap{font-size:13px;font-weight:700;color:var(--mut);text-align:center;margin-bottom:10px}
-.bw{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 28px 64px -18px rgba(15,23,42,.22)}
-.bc{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--paper);border-bottom:1px solid var(--line)}
-.dots{display:flex;gap:5px}.dots i{width:9px;height:9px;border-radius:50%;background:#CBD5E1}
-.url{flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 14px;font-size:12px;color:#334155;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.live{font-size:12px;font-weight:700;background:#DCFCE7;color:#166534;padding:2px 10px;border-radius:99px;white-space:nowrap}
-.scr{position:relative;aspect-ratio:16/10.5;background:var(--paper)}
+.cap{font-size:12px;font-weight:700;color:var(--mut);text-align:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.bw{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 24px 56px -18px rgba(15,23,42,.2);width:100%}
+.bc{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--paper);border-bottom:1px solid var(--line)}
+.dots{display:flex;gap:5px;flex-shrink:0}.dots i{width:8px;height:8px;border-radius:50%;background:#CBD5E1}
+.url{flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:11.5px;color:#334155;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.live{font-size:11px;font-weight:700;background:#DCFCE7;color:#166534;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0}
+.scr{position:relative;aspect-ratio:16/10.5;background:var(--paper);width:100%;overflow:hidden}
 .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;animation:fd 12s ease-in-out infinite}
 .scr img:nth-child(2){animation-delay:4s}.scr img:nth-child(3){animation-delay:8s}
 @keyframes fd{0%,28%{opacity:1}33%,95%{opacity:0}100%{opacity:1}}
-.rib{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:var(--sh);font-size:14px}
-.rib small{display:block;font-size:12px;color:var(--mut);font-weight:700}
-.rib span{background:#DCFCE7;color:#166534;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;text-align:center}
 
-/* barre de prix rectangulaire et équilibrée */
-.price{background:#fff;border:1px solid var(--line);border-top:3px solid var(--a);border-radius:20px;padding:22px;box-shadow:var(--sh)}
-.pg{display:grid;gap:18px}
-.pr{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;font-variant-numeric:lining-nums tabular-nums}
-.pr b{font:800 clamp(40px,9vw,52px)/1 var(--fd);letter-spacing:-.035em}
-.pr s{color:#6B7280;font-weight:700}
-.pr em{font-style:normal;background:#DCFCE7;color:#166534;font-weight:800;font-size:12px;padding:3px 10px;border-radius:99px}
-.pn{font-size:14px;color:var(--mut);margin-top:6px;max-width:36ch}
-.ok{list-style:none;display:grid;gap:9px;font-size:15px;font-weight:600}
-.ok li,.cd li{display:flex;gap:12px;align-items:flex-start}
-.ok li:before,.site li:before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--b);margin-top:.62em}
-.gar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
-.lnk{background:none;border:0;color:var(--b);font:700 13px var(--fb);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px}
+.rib{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 12px;box-shadow:var(--sh);font-size:13.5px;width:100%;min-width:0}
+.rib small{display:block;font-size:11px;color:var(--mut);font-weight:700}
+.rib strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rib span{background:#DCFCE7;color:#166534;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0}
+
+/* Barre de prix rétablie, large et propre */
+.price{
+  background:#fff;
+  border:1px solid var(--line);
+  border-top:3px solid var(--a);
+  border-radius:20px;
+  padding:22px 28px;
+  box-shadow:var(--sh);
+  width:100%;
+  box-sizing:border-box;
+}
+.pg{display:grid;gap:18px;align-items:center;width:100%}
+.pr{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;font-variant-numeric:lining-nums tabular-nums}
+.pr b{font:800 clamp(38px,8vw,48px)/1 var(--fd);letter-spacing:-.035em}
+.pr s{color:#6B7280;font-weight:700;font-size:17px}
+.pr em{font-style:normal;background:#DCFCE7;color:#166534;font-weight:800;font-size:11px;padding:2px 8px;border-radius:99px}
+.pn{font-size:13.5px;color:var(--mut);margin-top:4px;max-width:36ch}
+.ok{list-style:none;display:grid;gap:8px;font-size:14px;font-weight:600;padding:0;margin:0}
+.ok li{display:flex;gap:10px;align-items:flex-start}
+.ok li:before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--b);margin-top:.62em}
+.gar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mut)}
+.hero-note{font-size:12.5px;color:var(--mut);margin-top:6px;text-align:left}
+
 @media(min-width:768px){
- .price{padding:26px 30px}
- .pg{grid-template-columns:auto minmax(0,1fr);gap:22px 40px;align-items:center}
- .pg .btn{grid-column:1/-1}
+  .pg{grid-template-columns:auto minmax(0,1fr);gap:20px 32px}
+  .pg .btn{grid-column:1/-1;width:100%}
 }
 @media(min-width:1100px){
- .pg{grid-template-columns:auto minmax(0,1fr) auto}
- .pg .btn{grid-column:auto;width:auto;white-space:nowrap;padding:0 32px}
+  .pg{grid-template-columns:auto minmax(0,1fr) auto;gap:20px 28px}
+  .pg .btn{grid-column:auto;width:auto;white-space:nowrap;padding:0 28px}
 }
 
 /* contraste */
@@ -323,12 +275,14 @@ footer p{margin-bottom:6px}footer a{color:var(--b);font-weight:700}
 
 <section class="hero">
   <div class="wrap hg">
+    <!-- 1. TEXTE -->
     <div class="ti">
       <p class="pill"><b>Offre réservée &lt; 10 ans d'exp.</b> Domaine .com offert · Hébergement 0 F/an</p>
       <h1>À l’heure où les partenaires cherchent des preuves : imposez votre <em>légitimité</em> en un seul lien.</h1>
       <p class="lead">Tout le monde peut inventer un CV sur papier. Pour décrocher des missions sérieuses, vos interlocuteurs veulent vérifier votre historique en ligne. Simplix Tech structure votre vitrine professionnelle d'autorité : trouvable sur Google, partageable instantanément sur WhatsApp et sans abonnement annuel.</p>
     </div>
 
+    <!-- 2. MOCKUP -->
     <div class="mk">
       <p class="cap">Exemple de rendu final</p>
       <div class="bw">
@@ -345,6 +299,7 @@ footer p{margin-bottom:6px}footer a{color:var(--b);font-weight:700}
       </div>
     </div>
 
+    <!-- 3. BARRE DE PRIX HORIZONTALE PLEINE LARGEUR -->
     <div class="price">
       <div class="pg">
         <div>
@@ -364,7 +319,9 @@ footer p{margin-bottom:6px}footer a{color:var(--b);font-weight:700}
         <button class="lnk" type="button" onclick="openContractModal()">Lire le contrat type</button>
       </div>
     </div>
-    <p class="note" style="margin-top:12px;text-align:left">Offre forfaitaire de 29.900 FCFA réservée aux professionnels ayant moins de 10 ans d’expérience. Pour les profils de 10 ans ou plus, PME et ONG, proposition personnalisée sur devis.</p>
+
+    <!-- 4. NOTE LÉGALE BIEN PLACÉE EN DESSOUS DU PRIX -->
+    <p class="hero-note">Offre forfaitaire de 29.900 FCFA réservée aux professionnels ayant moins de 10 ans d’expérience. Pour les profils de 10 ans ou plus, PME et ONG, proposition personnalisée sur devis.</p>
   </div>
 </section>
 
