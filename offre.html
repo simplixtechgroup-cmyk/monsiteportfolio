@@ -512,6 +512,7 @@ document.addEventListener("keydown",function(e){
 });
 function toggleFaq(b){var it=b.parentElement.parentElement,o=it.classList.toggle("open");b.setAttribute("aria-expanded",o)}
 
+// Soumission Ultime : Brevo (Emailing) + Gmail (Notification) + WhatsApp (Closing)
 function handleLeadSubmit(e){
   e.preventDefault();
   var btn=document.getElementById("lead-btn"),
@@ -521,21 +522,28 @@ function handleLeadSubmit(e){
       job=document.getElementById("lead-job").value.trim(),
       profile=document.getElementById("lead-profile").value,
       payment=document.getElementById("lead-payment").value,
-      source=document.getElementById("lead-source").value,
-      status=document.getElementById("lead-status");
-  if(btn.disabled)return;
-  if(!profile){document.getElementById("lead-profile").focus();return;}
-  var isCustom = profile !== "Professionnel individuel, moins de 10 ans d’expérience";
-  var msg="*DEMANDE "+(isCustom?"DE DEVIS PERSONNALISÉ":"DE MAQUETTE")+" - SIMPLIX TECH GROUP*\n\n"+
-    "*Nom et prénoms :* "+name+"\n*WhatsApp :* "+phone+"\n*E-mail :* "+email+"\n*Activité :* "+job+"\n*Profil :* "+profile+"\n*Modalité préférée :* "+payment+"\n*Origine :* "+source+"\n\n"+
-    (isCustom ? "Bonjour Simplix Tech, je souhaite discuter de mon besoin et recevoir un devis personnalisé." : "Bonjour Simplix Tech, je souhaite recevoir une première maquette de mon site professionnel.");
-  var waUrl="https://wa.me/2290128821818?text="+encodeURIComponent(msg);
+      source=document.getElementById("lead-source").value;
 
+  if(btn.disabled) return;
   btn.disabled=true;
   btn.textContent="Ouverture de WhatsApp…";
-  if(status)status.textContent="Redirection vers WhatsApp en cours…";
 
-  /* Envoi silencieux par FormSubmit avec keepalive */
+  // 1. ENREGISTREMENT AUTOMATIQUE DANS TA LISTE BREVO (Silencieux)
+  var brevoUrl = "https://ce2c06dd.sibforms.com/serve/MUIFAOqBv93f0GrZNotN41UfD-GTYugS6hPu57Xv3CfuASnZEwljI1Lit2gcz62RQoZdL7eMa4FVQRwdcV_vo8N3Tys_3iXjONo36MZVrQAkz4AOOhdkuzvLBYItLGRq0d2kXe7dtkJBYp1rdkXa35prpUwOjfJSH-eRpuqoR3867mSCysutHra4fyJj0SyUCHzFURdSofRLD-gX4g==";
+  
+  var brevoData = new FormData();
+  brevoData.append("EMAIL", email);
+  brevoData.append("email_address_check", "");
+  brevoData.append("locale", "fr");
+
+  fetch(brevoUrl, {
+    method: "POST",
+    body: brevoData,
+    mode: "no-cors",
+    keepalive: true
+  }).catch(function(){});
+
+  // 2. NOTIFICATION GMAIL (FormSubmit)
   fetch("https://formsubmit.co/ajax/simplixtechgroup@gmail.com",{
     method:"POST",
     headers:{"Content-Type":"application/json","Accept":"application/json"},
@@ -547,14 +555,22 @@ function handleLeadSubmit(e){
       "Profil":profile,
       "Formule de paiement":payment,
       "Source":source,
-      "_subject":(isCustom?"DEMANDE DE DEVIS PERSONNALISÉ : ":"NOUVELLE DEMANDE DE MAQUETTE : ")+name,
+      "_subject":"NOUVELLE DEMANDE DE MAQUETTE : "+name,
       "_captcha":"false",
-      "_template":"table"
+      "_template":"table",
+      "_honey":""
     }),
     keepalive:true
   }).catch(function(){});
 
-  /* Redirection mobile universelle sans blocage de popup */
+  // 3. MESSAGE ET REDIRECTION WHATSAPP INSTANTANÉE (350 ms)
+  var isCustom = profile !== "Professionnel individuel, moins de 10 ans d’expérience";
+  var msg="*DEMANDE "+(isCustom?"DE DEVIS PERSONNALISÉ":"DE MAQUETTE")+" - SIMPLIX TECH GROUP*\n\n"+
+    "*Nom et prénoms :* "+name+"\n*WhatsApp :* "+phone+"\n*E-mail :* "+email+"\n*Activité :* "+job+"\n*Profil :* "+profile+"\n*Modalité :* "+payment+"\n*Origine :* "+source+"\n\n"+
+    (isCustom ? "Bonjour Simplix Tech, je souhaite discuter de mon besoin et recevoir un devis personnalisé." : "Bonjour Simplix Tech, je souhaite recevoir une première maquette de mon site professionnel.");
+
+  var waUrl="https://wa.me/2290128821818?text="+encodeURIComponent(msg);
+
   setTimeout(function(){
     window.location.href = waUrl;
   }, 350);
